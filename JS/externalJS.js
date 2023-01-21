@@ -96,6 +96,9 @@ else if (amount < 2 || expiration == false){
 else if (premium == true && expiration ==  true) {
     alert("You can not use this offer");
 }
+else if (premium == true && amount < 2) {
+    alert ("You can use this offer.");
+}
 else{
     alert("You can use this offer");
 }
