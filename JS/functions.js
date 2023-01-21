@@ -8,18 +8,13 @@
  * Example
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
-function sayHello(){
-    var userInput = prompt("What is your name?");
-    var name = ("Hello, " + userInput);
+function sayHello(name){
 
-
-    console.log(name);
-    return name;
+    return "Hello, " + name;
 }
 
-var name = sayHello();
-sayHello();
-console.log(name);
+console.log(sayHello("Toby"));
+
 //Isn't this one the same?
 
 /**
@@ -38,11 +33,12 @@ var greeting = sayHello(userName);
 alert(greeting);
 sayHello(userName);
 */
-function sayHi(userInput){
+function sayHello(name){
     return "Hello, " + name;
 }
-var helloMessage = sayHello("Bobby");
+var helloMessage = sayHello("Paul");
 console.log(helloMessage);
+
 
 /**
  * TODO:
@@ -50,13 +46,13 @@ console.log(helloMessage);
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-var myName = "Paul";
+var myName = "Paulie";
 
-function sayHowdy(name) {
-    console.log("Hello, " + name);
+function sayHello(name) {
+    return "Hello, " + myName;
 }
+console.log(sayHello("TImmy"));
 
-console.log(sayHello(myName));
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
 var random = Math.floor((Math.random() * 3) + 1);
@@ -78,7 +74,12 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
+function isTwo(number){
+    return number === 2;
+}
 
+console.log(isTwo(random));
+console.log(random);
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -90,6 +91,33 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
+//want to take in amount of bill first
+//pass that into an integer
+//
+let question = prompt("How much was the bill?");
+
+let bill = parseInt(question);
+
+let percentage = prompt("How much percentage do you want the tip to be? i.e. 15, 20, 25");
+
+let tip = parseInt(percentage);
+
+let tipConverted = tip / 100;
+
+console.log("The bill is " + bill + " dollars. The user wants to tip " + percentage + " %");
+function calculateTip(){
+    return bill * tipConverted;
+
+}
+console.log("So we should take the percentage " + tipConverted + "% and multiply it by the bill. " + bill +
+    " dollars. That should give us a tip amount of " + (calculateTip()));
+console.log("Then we simply add that to our bill.")
+calculateTip();
+
+let total = bill + calculateTip();
+
+alert ("The total is " + total);
+console.log("The total should be " + total);
 
 /**
  * TODO:
