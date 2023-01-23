@@ -10,6 +10,10 @@ alert("Nice, " + favoriteColor + " is my favorite too!");
 * Brother bear 5 days
 * Hercules 1 day\
 * Price per day 3$*/
+
+alert("Welcome to Rockbuster Movies!");
+
+
 var price = 3;
 var littleMerm = prompt("How many days did you have the Little Mermaid?");
 var brotherB = prompt("How many days for Brother Bear?");
@@ -81,7 +85,7 @@ if (classFull && classConflict) {
 *
 *
 * */
-let quantity = prompt("How many are you buying?");
+/** let quantity = prompt("How many are you buying?");
 let expiration = confirm("Has the offer expired?");
 let premium = confirm("Are you a premium member?");
 
@@ -102,6 +106,14 @@ else if (premium == true && amount < 2) {
 else{
     alert("You can use this offer");
 }
+**/
+//class example
+
+var isPremium = confirm("Are you a valued premium member?");
+var morethan2 = confirm("Did you buy more than 2?");
+var offerExp = confirm("was the coupon still in effect?");
+
+alert ("It is " + ((isPremium || morethan2) && offerExp) + " that I can offer you a discount today!");
 
 console.log("Sup dude from the external JavaScript");
 
@@ -111,10 +123,11 @@ var confirmed = confirm('Hello from External');
 console.log(confirmed); // will be either true or false
 console.log("Hey there from the outside");
 
-alert("Welcome to the THUNDERDOME!");
+/**alert("Welcome to the THUNDERDOME!");
 
 var userInput = prompt('What weapon do you want to use?');
 console.log('The user wants to use a(n): ' + userInput);
 alert("Oooh a(n) " + userInput + "? Very nice");
 
 alert("Now prepare yourself for Valhalla!");
+**/

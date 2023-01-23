@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>functions lecture</title>
+</head>
+<body>
+<script>
+
+  function hello() {
+    alert("Suh dude");
+  }
+hello();
+
+  function twoPlusTwo (){
+    return 2 + 2;
+  }
+  function helloName(name) {
+      //return name;
+      return alert("Hello " + name + " how are you?");
+  }
+function twoPlusNum(x) {
+
+      return 2 + x;
+}
+
+function numPlusNum(x,y){
+      return x + y;
+}
+  var globalString = "The stars at night are big and bright...";
+
+  function exampleScopeFunction(){
+
+      alert (globalString + "... deep in the heart of Texas!");
+
+      var localString = ".... deep in side my function's scope";
+
+      alert("The variable is accessible from here ") + localString;
+
+  }
+
+  alert(globalString + exampleScopeFunction());
+
+  (function(){
+
+  })();
+
+</script>
+</body>
+</html>
