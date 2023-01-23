@@ -34,7 +34,7 @@ alert(greeting);
 sayHello(userName);
 */
 
-var helloMessage = sayHello("Paul");
+let helloMessage = sayHello("Paul");
 console.log(helloMessage);
 
 
@@ -44,7 +44,7 @@ console.log(helloMessage);
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-var myName = "Paulie";
+let myName = "Paulie";
 
 
 console.log(sayHello(myName));
@@ -138,8 +138,9 @@ console.log("The total should be " + total);
  */
 alert("Welcome to Bass Guitar Pro Shop!");
 
-var originalPrice = prompt("How much was your product today?");
-var discounted = .2;
+let originalPrice = prompt("How much was your product today?");
+let discounted = .2;
+
 function calculateDiscount() {
     return originalPrice * discounted;
 }
