@@ -13,7 +13,7 @@ function sayHello(name){
     return "Hello, " + name;
 }
 
-console.log(sayHello("Toby"));
+console.log(sayHello);
 
 //Isn't this one the same?
 
@@ -33,9 +33,7 @@ var greeting = sayHello(userName);
 alert(greeting);
 sayHello(userName);
 */
-function sayHello(name){
-    return "Hello, " + name;
-}
+
 var helloMessage = sayHello("Paul");
 console.log(helloMessage);
 
@@ -48,10 +46,8 @@ console.log(helloMessage);
  */
 var myName = "Paulie";
 
-function sayHello(name) {
-    return "Hello, " + myName;
-}
-console.log(sayHello("TImmy"));
+
+console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -140,3 +136,15 @@ console.log("The total should be " + total);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+alert("Welcome to Bass Guitar Pro Shop!");
+
+var originalPrice = prompt("How much was your product today?");
+var discounted = .2;
+function calculateDiscount() {
+    return originalPrice * discounted;
+}
+function applyDiscount(){
+    return originalPrice - calculateDiscount();
+}
+
+alert("With the discount, your total is: " + applyDiscount());
