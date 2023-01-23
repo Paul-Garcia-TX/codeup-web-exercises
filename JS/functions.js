@@ -125,7 +125,7 @@ console.log("The total should be " + total);
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-
+// I think I unintentionally did this?
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
