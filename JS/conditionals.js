@@ -228,8 +228,15 @@ function calculateTotal(luckyNumber){
 }
 let newTotal = beforeDiscount - calculateTotal(luckyNumber);
 
-alert("Your new total is " + newTotal);
-
+if (luckyNumber === 0) {
+    alert("Your total is " + beforeDiscount);
+}
+else if (luckyNumber === 5) {
+    alert("Congrats on free stuff!");
+}
+else {
+    alert("Your total is " + newTotal);
+}
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -259,38 +266,47 @@ alert("Your new total is " + newTotal);
  */
 
 let yesOrNo = confirm("Would you like to enter a number?");
-
-
-if (yesOrNo === true){
+let aNumber;
+function ask (yesOrNo){
+    if (yesOrNo === true){
     console.log("The user said yes");
     alert("Ok please pick a number.");
-
-}
-else {
+    let aNumber = prompt("What number are you thinking of?");
+    return aNumber;
+    }
+    else {
     console.log("The user said no");
     alert("Understandable, have a good day.");
+    }
+    return;
 }
 
-let aNumber = prompt("What number are you thinking of?");
+let returnedNumber = ask(yesOrNo);
 
-if (aNumber % 2 === 0){
-    alert("The number is even");
-    console.log(aNumber + " is even");
+console.log(returnedNumber);
+if (isNaN(returnedNumber)) {
+    alert("Sorry you didn't want to play");
 }
 else {
-    alert("The number is odd");
-    console.log(aNumber + " is odd.");
 
+    if (returnedNumber % 2 === 0) {
+        alert("The number is even");
+        console.log(returnedNumber + " is even");
+    } else {
+        alert("The number is odd");
+        console.log(returnedNumber + " is odd.");
+    }
 }
-console.log("The number was " + aNumber);
 
-let correction = parseInt(aNumber);
+console.log("The number was " + returnedNumber);
+
+let correction = parseInt(returnedNumber);
 
 let add = correction + 100;
 
 console.log(add);
 
-if (correction > 0) {
+if (correction < 0) {
     console.log("The number is negative.");
 }
 else {
