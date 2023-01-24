@@ -73,8 +73,8 @@ console.log("The color is " + randomColor );
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-/**
- *
+alert("The color is " + randomColor);
+alert("Go go Power Rangers!");
 switch(randomColor) {
     case "red" :
         alert("Red ranger: Tyrannosaurus!");
@@ -101,10 +101,10 @@ switch(randomColor) {
 
 let powerRanger = prompt("Which color was your favorite?");
 console.log("Response was " + powerRanger);
-alert("You chose the " + powerRanger+ " ranger.");
+alert("Nice, " + powerRanger+ " is a cool color.");
 
-analyzeColor(powerRanger);
-*/
+
+
 
 /**
  * TODO:
@@ -145,14 +145,15 @@ let beforeDiscount = prompt("What is your total?");
 /**
 let testPrompt = prompt("Pick a number between 1 and 5");
 
+let parsely = parseInt(testPrompt);
 
-function calculateTotal(testPrompt){
-    if (testPrompt === '1'){
+function calculateTotal(){
+    if (parsely === 1){
         let discountAmount = beforeDiscount*discountOne;
         alert("Your discount is 10%" )
         return discountAmount;
     }
-    else if (testPrompt === '2'){
+    else if (parsely === 2){
         let discountAmount = beforeDiscount*discountTwo;
 
         alert("Your discount is 25%");
@@ -177,8 +178,18 @@ function calculateTotal(testPrompt){
 }
 let afterDiscount = beforeDiscount - calculateTotal(testPrompt);
 
-alert("Your total is " + afterDiscount);
- */
+//alert("Your total is " + afterDiscount);
+if (testPrompt === 0) {
+    alert("Your total is " + beforeDiscount);
+}
+else if (testPrompt === 5) {
+    alert("Congrats on free stuff!");
+}
+else {
+    alert("Your total is " + afterDiscount);
+}
+
+*/
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
