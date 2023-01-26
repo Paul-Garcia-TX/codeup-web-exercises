@@ -32,17 +32,13 @@ for ( let rando = luckyNumber; luckyNumber < 200; luckyNumber++){
 
 }
  */
-let x=1;
-function cat (x){
-        for (let x = 1; x < 10; x++){
-            console.log(x);
-        return "" + x;
+let x;
+let y;
+
+for (x=1; x < 10; x += 1) {
+  let  z = '';
+    for (y = 0; y < x; y += 1)
+        z += x;
+    console.log(z);
 }
-}
-cat(x);
 
-/**function concat (input, inputOne) {
-
-        return "" + input  + inputOne;
-
-}*/
