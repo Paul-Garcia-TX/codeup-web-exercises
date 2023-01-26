@@ -17,28 +17,29 @@ showMultiplicationTable(input);
 //I need a random number generator
 //between 20 and 200
 //only generate 10 responses
-/**
-let numberToStop = 200;
-let luckyNumber = Math.floor(Math.random() * 20);
 
-for ( let rando = luckyNumber; luckyNumber < 200; luckyNumber++){
-    if (luckyNumber % 2 === 0 ) {
-        //alert("The number is even");
-        console.log(luckyNumber + " is even");
+
+for (let i = 0; i < 10; i++) {
+
+    let randomNumber = Math.floor(Math.random() * 200);
+
+    if (randomNumber % 2 === 0) {
+        console.log(randomNumber + " is even");
     } else {
-       // alert("The number is odd");
-        console.log(luckyNumber + " is odd.");
+        console.log(randomNumber + " is odd");
     }
-
 }
- */
+
 let x;
 let y;
 
-for (x=1; x < 10; x += 1) {
+for (x = 1; x < 10; x += 1) {
   let  z = '';
     for (y = 0; y < x; y += 1)
         z += x;
     console.log(z);
 }
 
+for (let i = 100; i > 0; i -= 5){
+    console.log(i);
+}
