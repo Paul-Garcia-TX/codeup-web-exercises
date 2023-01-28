@@ -1,32 +1,59 @@
 
+function counting () {
+    let question;
+    while(true){
+        question = parseInt(prompt("Please enter an odd nubmer between 1 and 50"));
 
-for (let i = 1; i <50;  i ++) {
-    let question = prompt("Please enter a number between 1 and 50")
+        if(question % 2 !== 0 && question > 0 && question <= 50){
+            break;
+        }
+        if (question % 2 === 0 && question < 50) {
+            console.log("User input is: " + question);
+            alert("That was an even number, please pick an ODD number");
 
-    if (question % 2 === 0 && question < 50 ) {
-        alert("That was an even number, please pick an ODD number");
+
+
+        } else if (question > 50) {
+            console.log("User input is: " + question);
+            alert("that was too high, please keep it under 50");
+
+
+        } else if (question < 0) {
+            console.log("User input is: " + question);
+            alert("That number is too low, please keep it between 1 and 50.");
+
+        }
+
+            console.log("User input is: " + question);
+            alert("Thank you");
+
 
     }
-    else if (question > 50){
-        alert("that was too high, please keep it under 50");
-
-    }
-    else if (question < 0){
-        alert("That number is too low, please keep it between 1 and 50.");
-
-    }
-
-    else {
-        alert("Thank you");
-        console.log(question);
-
-    }
-
-    if (question % 2 !== 0 && question < 50) {
-        console.log(question);
-        question ++;
-
-    }
-    break;
+    return question;
 }
+
+
+
+
+let numberToSkip = counting();
+
+for (let i = 1; i <= 50; i++) {
+
+
+    if (i % 2 !== 0) {
+        console.log(i);
+        continue;
+    }
+    if (i === numberToSkip) {
+        alert("Skipping " + numberToSkip);
+
+    }
+
+
+}
+
+
+
+
+
 
