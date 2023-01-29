@@ -3,6 +3,7 @@ function counting () {
     let question;
     while(true){
         question = parseInt(prompt("Please enter an odd nubmer between 1 and 50"));
+        console.log(question + " is what the user entered.");
 
         if(question % 2 !== 0 && question > 0 && question <= 50){
             break;
@@ -39,15 +40,13 @@ let numberToSkip = counting();
 
 for (let i = 1; i <= 50; i++) {
 
+    if ( i % 2 !== 0) {
 
-    if (i % 2 !== 0) {
         console.log(i);
-        continue;
     }
-    if (i === numberToSkip) {
-        alert("Skipping " + numberToSkip);
 
-    }
+
+
 
 
 }
