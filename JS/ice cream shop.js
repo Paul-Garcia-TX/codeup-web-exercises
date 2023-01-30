@@ -17,8 +17,14 @@ do {
     let transaction =  prompt("How many are you buying?");
 
     let remainder = allCones - transaction;
-
+    if (transaction > remainder){
+        alert("Ok that will be " + transaction + " ice creams. Thank you!");
+    }
+    else if (transaction > remainder){
+        alert("Sorry, I don't have that many ice cream cones to sell");
+    }
     console.log(remainder);
+
 }
 
 while (allCones < 50){
