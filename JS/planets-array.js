@@ -30,12 +30,12 @@
     let starWars = [ 'Tatooine', 'Endor', 'Degobah', 'Hoth' ];
 
     let newPlanets = starWars.join("<br>");
-
+    console.log(starWars);
     console.log(newPlanets);
 
     document.body.innerHTML+=newPlanets;
 
-    console.log(starWars);
+
 
 
 })();
