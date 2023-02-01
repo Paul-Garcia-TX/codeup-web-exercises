@@ -16,7 +16,7 @@ let names = ['John', "Paul", "George", "Ringo"];
      * array.
      */
 console.log(names.length);
-
+console.log("------------");
     /**
      * TODO:
      * Create log statements that will print each of the names individually by
@@ -25,7 +25,7 @@ console.log(names.length);
 names.forEach(function(names){
     console.log("Here is one of the names: " + names + ".");
     });
-
+    console.log("------------");
     /**
      * TODO:
      * Write some code that uses a for loop to log every item in the names
@@ -35,7 +35,7 @@ names.forEach(function(names){
 
      console.log("The name at index " + i + " is: " + names[i]);
  }
-
+    console.log("------------");
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
@@ -43,8 +43,9 @@ names.forEach(function(names){
     names.forEach(function(names){
         console.log("Here is one of the names: " + names + ".");
     });
-
+    console.log("------------");
 console.log("The names of the Beetles are " + names);
+    console.log("------------");
     /**
      * TODO:
      * Create the following three functions, each will accept an array and
@@ -60,8 +61,9 @@ console.log("The names of the Beetles are " + names);
      */
 
 let numbers = [1, 2, 3, 4, 5];
+    console.log(numbers);
 
-function first(){
+    function first(){
     return console.log(numbers[0]);
 }
 first();
