@@ -3,7 +3,7 @@
 
     // create a circle object
     let circle = {
-       radius: 3,
+       radius: 5,
 
         getArea: function () {
             // TODO: complete this method

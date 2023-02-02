@@ -73,12 +73,16 @@
             alert("Hi " + shoppers.name + ". You've spent " + shoppers.amount + " dollars. You get a discount of 12%");
             let doMath = shoppers.amount * 0.12;
             let newTotal = shoppers.amount - doMath;
+            console.log(shoppers.name + " original total was "+shoppers.amount);
             console.log(shoppers.name +"'s new total is " + newTotal);
+            console.log("------NEXT SHOPPER------");
             alert("Your new total is " + newTotal);
         }
         else {
             alert("Sorry, " + shoppers.name + " You have only spent " + shoppers.amount + ". You don't get a discount. Your total is still " + shoppers.amount);
+            console.log(shoppers.name + " did not spend enough to get a discount");
             console.log(shoppers.name + " total is " + shoppers.amount);
+            console.log("------NEXT SHOPPER------");
         }
 
     });
@@ -148,5 +152,14 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+      function createBook (){
+          let newbook = {
+              title: prompt("What is the name of your book?"),
+              author: prompt("Who wrote it?")
+          }
+          console.log("The user input " + newbook.title + " as the name of the book and " + newbook.author + " as the author");
+          return newbook;
+    }
+    console.log(createBook());
 
 })();
