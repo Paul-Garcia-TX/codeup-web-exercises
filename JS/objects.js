@@ -29,7 +29,7 @@
      */
     person.sayHello = "Hello from ";
 
-    console.log(person.sayHello + person.firstName +" " + person.lastName);
+    console.log(person);
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -53,35 +53,22 @@
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
      ];
-   /** function discount(shoppers){
-        if (shoppers.amount > 200){
-            alert("Hi " + shoppers.name + ". You've spent " + shoppers.amount + " dollars. You get a discount of 12%");
-            let doMath = shoppers.amount * 0.12;
-            let newTotal = shoppers.amount - doMath;
-            console.log(shoppers.name +"'s new total is " + newTotal);
-            alert("Your new total is " + newTotal);
-        }
-        else {
-            alert("Sorry, " + shoppers.name + " You have only spent " + shoppers.amount + ". You don't get a discount. Your total is still " + shoppers.amount);
-            console.log(shoppers.name + " total is " + shoppers.amount);
-        }
 
-    } */
 
     shoppers.forEach( function(shoppers){
         if (shoppers.amount > 200){
-            alert("Hi " + shoppers.name + ". You've spent " + shoppers.amount + " dollars. You get a discount of 12%");
+            alert("Hi " + shoppers.name + ". You've spent $" + shoppers.amount + " dollars. You get a discount of 12%");
             let doMath = shoppers.amount * 0.12;
             let newTotal = shoppers.amount - doMath;
-            console.log(shoppers.name + " original total was "+shoppers.amount);
-            console.log(shoppers.name +"'s new total is " + newTotal);
+            console.log(shoppers.name + " original total was "+shoppers.amount + ". They get a discount of $" + doMath + " dollars.");
+            console.log(shoppers.name +"'s new total is $" + newTotal);
             console.log("------NEXT SHOPPER------");
-            alert("Your new total is " + newTotal);
+            alert("Your new total is $" + newTotal);
         }
         else {
-            alert("Sorry, " + shoppers.name + " You have only spent " + shoppers.amount + ". You don't get a discount. Your total is still " + shoppers.amount);
+            alert("Sorry, " + shoppers.name + " You have only spent $" + shoppers.amount + ". You don't get a discount. Your total is still $" + shoppers.amount);
             console.log(shoppers.name + " did not spend enough to get a discount");
-            console.log(shoppers.name + " total is " + shoppers.amount);
+            console.log(shoppers.name + " total is $" + shoppers.amount);
             console.log("------NEXT SHOPPER------");
         }
 
@@ -102,18 +89,17 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
     let books = [
-        {title: 'Harry Potter and the Prisoner of Azkeban', authorFirst: 'JK', authorLast: 'Rowling'},
-        {title: 'A song of Ice and Fire', authorFirst: 'George', authorLast: 'RR. Martin',},
-        {title: 'Ready Player One', authorFirst: 'Ernest', authorLast: 'Cline'},
-        {title: 'Gone Girl', authorFirst: 'Gillian', authorLast: 'Flynn'},
-        {title: 'Where the Crawdads Sing', authorFirst: 'Delia', authorLast: 'Owens'},
+        {title: 'Harry Potter and the Prisoner of Azkeban', author: {First: 'JK', Last: 'Rowling'}},
+        {title: 'A song of Ice and Fire', author: {First: 'George', Last: 'RR. Martin',}},
+        {title: 'Ready Player One', author: {First: 'Ernest', Last: 'Cline'}},
+        {title: 'Gone Girl', author: {First: 'Gillian', Last: 'Flynn'}},
+        {title: 'Where the Crawdads Sing', author: {First: 'Delia', Last: 'Owens'}},
     ]
 
-    books.forEach(function(books,index){
+    books.forEach(function(book,index){
         console.log("Book #" + (index + 1));
-        console.log(books.title);
-        console.log(books.authorFirst);
-        console.log(books.authorLast);
+        console.log("Title: " +book.title);
+        console.log("Written by: " + book.author.First + " " + book.author.Last);
         console.log("--------------");
     });
 
@@ -152,14 +138,21 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-      function createBook (){
-          let newbook = {
-              title: prompt("What is the name of your book?"),
-              author: prompt("Who wrote it?")
-          }
-          console.log("The user input " + newbook.title + " as the name of the book and " + newbook.author + " as the author");
-          return newbook;
+      function createBook () {
+        let netbook = {
+            title: prompt("What is the name of your book?"),
+            author: {
+                first: prompt("What is the author's first name?"),
+                last: prompt("What is their last name"),
+            },
+        };
+            console.log("The user input " + netbook.title + " as the name of the book and " + netbook.author.first + " " + netbook.author.last + " as the author");
+            return netbook;
+
     }
-    console.log(createBook());
+
+    books.push(createBook());
+
+    console.log(books);
 
 })();
