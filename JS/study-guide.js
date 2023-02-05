@@ -13,18 +13,12 @@
 // timesFour(null) //false
 
 function timesFour(input){
-    if (isNaN(input) && typeof input == 'string'){
-        input = parseInt(input);
-        console.log(input * 4);
-        return input * 4;
-    }
-    else if (input == input){
-        return input * 4;
-    }
-    else {
-
+    input = parseInt(input);
+    if (isNaN(input)) {
         return false;
     }
+    console.log(input * 4);
+    return input * 4;
 }
 
 
@@ -38,21 +32,14 @@ function timesFour(input){
 // convertDaystoHours(false) //false
 
 function converDaystoHours (days){
-    if (typeof(days) == 'string'){
-        days = parseInt(days);
-        let result = days * 24;
-        console.log(result);
-        return result;
-    }
-    else if (isNaN(days)){
+    days = parseInt(days);
+     if (isNaN(days)){
         return false;
     }
-    else if (days == days){
-        return days * 24;
-    }
-    else {
-        return false;
-    }
+
+    let result = days * 24;
+    console.log(result);
+    return result;
 
 }
 
@@ -67,13 +54,15 @@ function converDaystoHours (days){
 let input = prompt("How much is the total?");
 let inputOne = prompt("How much is the tax?");
 function calculateTax (input, inputOne){
-    if (typeof(input) == 'string' || typeof(inputOne == 'string')){
-        input= parseInt(input);
-        inputOne = parseInt(inputOne);
+    input= parseInt(input);
+    inputOne = parseInt(inputOne);
+    if (isNaN(input) || isNaN(inputOne)) {
+        return false;
+    }
         let decimal = inputOne / 100;
         let total = input + (input * decimal);
         console.log(total);
         return total;
-    }
+
 }
 console.log(calculateTax(input, inputOne));
