@@ -1,0 +1,36 @@
+/*
+multi
+line
+comment
+*/
+:root{
+    color-scheme: dark;
+}
+
+h1.fancy-header {
+    color: limegreen; /* single line comment */
+    text-decoration: underline;
+    font-size: 48px;
+
+}
+
+h3.subjects {
+    color: turquoise;
+    text-decoration: wavy;
+    font-size: 28px;
+}
+
+.lists {
+    color: aliceblue;
+    text-decoration: wavy;
+    font-size: 24px;
+}
+table, th, td, tr {
+    border: 2px solid;
+    font-size: 28px;
+    font-style: oblique;
+    text-align: center;
+}
+table {
+    width: 50%;
+}
