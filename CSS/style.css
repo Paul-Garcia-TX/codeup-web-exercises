@@ -11,7 +11,10 @@ h1.fancy-header {
     color: limegreen; /* single line comment */
     text-decoration: underline;
     font-size: 48px;
-
+    margin:auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
 }
 
 h3.subjects {
