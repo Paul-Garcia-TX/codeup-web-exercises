@@ -7,18 +7,59 @@ comment
     color-scheme: dark;
 }
 body {
-    background-image: url("https://i.redd.it/p2oydeg58dca1.png");
+    background-image: url('https://cdn.pixabay.com/photo/2016/10/11/21/43/geometric-1732847_1280.jpg');
+}
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    min-width:100%;
+    min-height: 100%;
+}
+body.bg img {
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+
 
 }
 
 h1.fancy-header {
-    color: limegreen; /* single line comment */
+    color: whitesmoke; /* single line comment */
     text-decoration: underline;
     font-size: 48px;
     margin:auto;
     width: 50%;
     padding: 10px;
     text-align: center;
+}
+.topnav {
+    position: relative;
+    display: inline-block;
+    padding-right: 35px;
+    padding-top: 25px;
+    padding-left: 15px;
+    padding-bottom: 20px;
+
+}
+.topnav-content {
+    display: none;
+    position: absolute;
+    background-color: purple;
+    min-width: 160px;
+    box-shadow: 20px 18px 16px 20px rgba(0,0,0,0.2);
+    padding: 22px 36px;
+    z-index: 1;
+}
+
+.topnav:hover .topnav-content {
+    display:block;
 }
 
 h3.subjects {
@@ -28,6 +69,9 @@ h3.subjects {
     -webkit-text-stroke: 1px black;
 }
 
+li.dropdown{
+    display.inline-block;
+}
 .lists {
     color: aliceblue;
     text-decoration: wavy;
@@ -52,10 +96,12 @@ ul.lists {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 0 100px inset, 0 0 5px grey;
+    box-shadow: 10px 10px 10px black, 10px 10px 5px blue;
     transition: box-shadow 1s;
     float:left;
     margin: 10px;
+    padding: 10px 10px 10px 10px;
+
 }
 .img::after{
     width: 80%;
@@ -63,7 +109,7 @@ ul.lists {
     display: block;
     white-space: pre;
     font: 15pt 'sigmar one';
-    color: white;
+    color: pink;
     border: 2px solid;
     text-align: center;
     display: flex;
@@ -72,11 +118,24 @@ ul.lists {
     transition: opacity 1s .5s;
 }
 .img:hover{
-    box-shadow: 0 0 0 5px inset, 0 0 0 5px grey, 0 0 0 10px grey inset;
+    box-shadow: 10px 10px 10px 5px inset, 0 0 0 5px darkblue, 0 0 0 10px grey inset;
     transition: box-shadow 1s;
 }
 .img:hover::after {
     opacity: 0;
     transition: opacity .5s;
 }
-
+.br {
+    display: block;
+    margin-bottom: 0em;
+}
+.brLarge{
+    display: block;
+    margin-bottom: 2em;
+}
+.div{
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+}
