@@ -1,12 +1,60 @@
-@media (prefers-color-scheme: dark) {
 
-}
 
 body, html {
     height: 100%;
     width: 100%;
     padding: 0;
-    margin: 0;
+    margin: 10;
     font-family: Arial, Ubuntu, sans-serif;
+    background-color: darkgrey;
+
+}
+div.section1 {
+    margin-bottom: 10px;
+    border: solid .5px;
+    border-radius: 15px;
+    background-color: lightblue;
+    padding: 10px;
+    width: 80%;
+    text-align: left;
+    color: blue;
+    font-weight: bold;
+}
+div.section2 {
+    margin-bottom: 10px;
+    border: solid .5px;
+    border-radius: 15px;
+    background-color: lightgreen;
+    padding: 10px;
+    width: 80%;
+    text-align: left;
+    font-weight: bold;
+    text-decoration-color: blue;
+
+}
+div.section3 {
+    margin-bottom: 10px;
+    border: solid 1px;
+    border-radius: 15px;
+    background-color: yellow;
+    padding: 10px;
+    width: 80%;
+    text-align: center;
+    font-weight: bolder;
+    font-size: large;
+
+
+}
+div.section4 {
+    margin-bottom: 10px;
+    border: solid 1px;
+    border-radius: 15px;
+    background-color: lightcoral;
+    padding: 9px;
+    width: 80%;
+    text-align: center;
+
+    font-weight: bold;
+    font-size: large;
 
 }
