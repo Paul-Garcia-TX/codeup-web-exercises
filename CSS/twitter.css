@@ -16,12 +16,42 @@ body, html {
     padding: 0;
     font-family: Arial, Ubuntu, sans-serif;
 }
-header {
+header.img {
     background-image: url("https://picsum.photos/1200/300");
     background-size: cover;
     min-height: 300px;
     padding-top: 275px;
+    border: solid 25px;
+
 }
+.image{
+    background-image: url("https://picsum.photos/1200/300");
+    background-size: cover;
+    min-height: 300px;
+    padding-top: 275px;
+    width: 100%;
+    border: solid 1px;
+    position: relative;
+    z-index: 75;
+
+    max-width: 100%;
+    height: 200px;
+}
+.profile {
+    background: var(--light-bg);
+    height:200px;
+    width: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: solid 3px;
+
+    position: relative;
+    top: 10px;
+    right: 10px;
+
+}
+
+
 a {
     color: var(--link-color);
 }
@@ -46,15 +76,7 @@ a {
 .nav-link:hover {
     color: var(--link-color);
 }
-.profile {
-    background: var(--light-bg);
-    height:150px;
-    width: 150px;
-    border-radius: 50%;
-    border: solid 3px;
-    overflow: hidden;
-    float: left;
-}
+
 .btn {
     border: 1px solid var(--main-link-color);
     color: var(--main-link-color);
