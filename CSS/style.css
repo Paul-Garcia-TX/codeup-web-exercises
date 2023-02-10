@@ -70,7 +70,7 @@ h3.subjects {
 }
 
 li.dropdown{
-    display.inline-block;
+    display:inline-block;
 }
 .lists {
     color: aliceblue;

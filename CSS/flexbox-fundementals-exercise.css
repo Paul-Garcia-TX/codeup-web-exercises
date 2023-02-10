@@ -23,6 +23,9 @@ h2, h3 {
     background: green;
     height: 1em;
     width: 2em;
+
+
+
 }
 
 .border {border: 2px solid black;}
@@ -33,6 +36,9 @@ h2, h3 {
     background: white;
     padding: 1em;
     margin: 0 auto;
+
+
+
     /* enter needed declarations here */
 }
 
@@ -43,24 +49,37 @@ section {
 section:nth-of-type(1) {
     height: 3em;
     background: lightgreen;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
     /* enter needed declarations here */
 }
 section:nth-of-type(1) div:last-child {
     /* enter needed declarations here */
+    align-self: flex-start;
 }
 
 .purple-box {
     background: fuchsia;
     width: 3em;
     height: 1em;
+
 }
 
 .purple-box:nth-of-type(1) {
     /* enter needed declarations here */
+    display: flex;
+    flex-direction: row;
+    flex-grow: 55;
 }
 
 .purple-box:nth-of-type(2) {
     /* enter needed declarations here */
+    display: flex;
+    flex-direction: row;
+    flex-grow: 35;
 }
 
 .blue-box {
