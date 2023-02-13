@@ -1,0 +1,30 @@
+body {
+    background-color: black;
+    color: cadetblue;
+}
+
+.nav {
+    background-color: #848487;
+    color: black;
+    list-style-type: none;
+    margin: 2px;
+    padding: 5px;
+
+
+
+}
+.nav-link {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+
+    padding: 1.5em;
+    width:100%;
+}
+.nav-item {
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+.nav-link:hover {
+    color: lightblue;
+}
