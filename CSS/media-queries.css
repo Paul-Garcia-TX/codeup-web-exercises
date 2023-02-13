@@ -1,0 +1,27 @@
+@media only screen and (max-width: 844px) {
+    .h1 {
+        font-size: 20px;
+        color: blue;
+    }
+
+    .nav-links {
+        border: solid blue 1px
+    }
+
+    .header-img {
+        width: 50%;
+        border: solid green 1px;
+    }
+    .main {
+        display: flex;
+        flex-wrap: wrap;
+        font-family: 'Poppins', sans-serif;
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+    .sub-section {
+        display: flex;
+        flex-wrap: wrap;
+        font-family: 'Poppins', sans-serif;
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+}
