@@ -44,6 +44,7 @@ body {
     justify-content: left;
     /*border: solid orange 3px;*/
     align-content: center;
+    list-style: none;
 }
 .follow {
     display: flex;
@@ -53,7 +54,7 @@ body {
 
 }
 .logo {
-    /*border: solid green 1px;*/
+    border: solid green 1px;
     width: 10%;
     height: auto;
     display: flex;
@@ -63,4 +64,5 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 1em;
     padding-top: .2em;
+    margin: auto;
 }
