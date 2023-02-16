@@ -1,0 +1,61 @@
+
+/*Nav bar*/
+
+.navbar {
+    /*border: solid orange 1px;*/
+    display: flex;
+    justify-content: flex-start;
+
+}
+.navbar-brand {
+    /*border: solid blue 1px;*/
+    font-family: 'Tourney', cursive;
+    font-size: xx-large;
+}
+.navbar-collapse {
+    /*border: solid purple 1px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar-collapse
+.nav-item{
+    /*border: green solid 1px;*/
+}
+form  {
+    /*border: pink solid 1px;*/
+    display: flex;
+    margin-right: 375px;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-grow: 4;
+
+}
+.form-control {
+    display: flex;
+    flex-grow: 4;
+}
+.btn{
+    background-color: white;
+
+}
+.btn-outline-success {
+    color: blue;
+    border-color: blue;
+}
+.btn-outline-success:hover {
+    background-color: lightseagreen;
+}
+.signup {
+    border: solid pink 1px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 155px;
+    height: 85px;
+    font-size: medium;
+}
+.signup:hover{
+    color: limegreen;
+}
