@@ -3,9 +3,32 @@
 .navbar-brand {
     font-family: 'Tourney', cursive;
 }
+#signup {
 
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    margin-left: auto;
+    width: 10%;
+}
+/*#searchbar {*/
+/*    border: solid 25px black;*/
+/*    float: left;*/
+/*}*/
 
 /*pizza*/
+
+.display-4 {
+    border: orange solid 1px;
+    display: flex;
+    flex-grow: initial;
+    justify-content: center;
+    background-color: #E5ECF0;
+    width: 100%;
+
+}
+
 .jumbotron {
     background-image: url("../img/pizza.png");
     border: solid blue 1px;
@@ -16,12 +39,3 @@
     margin: auto;
 
 }
-.display-4 {
-    border: orange solid 1px;
-    display: flex;
-    flex-grow: initial;
-    justify-content: center;
-    background-color: #E5ECF0;
-    width: 100%;
-
-}4
