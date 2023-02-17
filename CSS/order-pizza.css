@@ -1,6 +1,8 @@
 
 /*!*Nav bar*!*/
-
+.navbar-brand {
+    font-family: 'Tourney', cursive;
+}
 
 
 /*pizza*/
