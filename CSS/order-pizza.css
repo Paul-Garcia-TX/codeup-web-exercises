@@ -20,18 +20,19 @@
 /*pizza*/
 
 .display-4 {
-    border: orange solid 1px;
+    opacity: 0.7;
     display: flex;
     flex-grow: initial;
     justify-content: center;
     background-color: #E5ECF0;
-    width: 100%;
+    width: auto;
+    font-family: 'Tourney', cursive;
 
 }
 
 .jumbotron {
     background-image: url("../img/pizza.png");
-    border: solid blue 1px;
+
     background-size: cover;
     height: 346px;
     display: flex;
