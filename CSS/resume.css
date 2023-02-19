@@ -1,3 +1,12 @@
 #name {
     font-family: 'Bebas Neue', cursive;
 }
+hr{
+    border: 8px solid darkgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    border-radius: 50px;
+
+}
