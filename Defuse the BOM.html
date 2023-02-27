@@ -17,7 +17,7 @@
     let detonationTimer = 5;
 
     // TODO: This function needs to be called once every second
-  let defuse =  (function updateTimer () {
+    function updateTimer () {
       if (detonationTimer == 0) {
         alert('EXTERMINATE!');
         document.body.innerHTML = '';
@@ -27,12 +27,14 @@
 
       detonationTimer--;
 
-    }, interval);
+    }
+    let intervalId = setInterval(updateTimer, interval);
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
-
+      clearInterval(intervalId)
+      alert("Whoo, that was close.")
     }
 
     // Don't modify anything below this line!
@@ -45,16 +47,7 @@
   })();
 </script>
 
-<form>
-  <label>username</label>
-  <input id="username" name="username" type="text">
-  <br>
-  <label>password</label>
-  <input id="password" name="password" type="password">
-  <br>
-  <!-- What goes here? -->
-</form>
-<button type="submit">Submit</button>
+
 
 
 </body>
