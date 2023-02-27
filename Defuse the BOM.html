@@ -3,10 +3,44 @@
 <head>
   <meta charset="utf-8">
   <title>Defuse the BOM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gajraj+One&display=swap" rel="stylesheet">
+  <style>
+      body{
+        background-image: linear-gradient(45deg, #ffee00 25%, #000000 25%, #000000 50%, #ffee00 50%, #ffee00 75%, #000000 75%, #000000 100%);
+        background-size: 56.57px 56.57px;
+      }
+      #message {
+        border: solid black 5px;
+        background: white;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        font-size: 75px;
+        font-family: 'Gajraj One', cursive;
+        color: black;
+        margin-top: 8em;
+      }
+      #defuser {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 40px 40px;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        margin: auto;
+      }
+  </style>
 </head>
 <body>
 
-<h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
+<p id="message">This BOM will self destruct in  <br><span id="timer">5</span> seconds...</p>
 <button id="defuser">Defuse the BOM</button>
 
 <script>
@@ -19,8 +53,9 @@
     // TODO: This function needs to be called once every second
     function updateTimer () {
       if (detonationTimer == 0) {
-        alert('EXTERMINATE!');
+
         document.body.innerHTML = '';
+        window.location = "https://youtu.be/RhEUBgu9j5Y?t=440"
       } else if (detonationTimer > 0) {
         document.getElementById('timer').innerHTML = detonationTimer;
       }
@@ -34,7 +69,7 @@
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
       clearInterval(intervalId)
-      alert("Whoo, that was close.")
+      window.location = "https://youtu.be/xPGHBJZQ0y4?t=182"
     }
 
     // Don't modify anything below this line!
