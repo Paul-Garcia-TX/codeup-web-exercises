@@ -26,15 +26,19 @@
   culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+<button id="first" type="button">Click Me!</button>
+<button id="second" type="button">Now Me!</button>
+<button id="third" type="button">What about Me?!</button>
+<button id="last" type="button">Don't forget about me!</button>
+
 <script>
   (function() {
     "use strict";
     // TODO: Uncomment next line and get the main header element by id
-    var mainHeader = document.getElementById("main-header");
-    console.log(mainHeader);
+
 
     // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-    mainHeader.innerHTML = "JavaScript is Cool";
+
     // TODO: Uncomment the next line and get the sub header element by id
     var subHeader = document.getElementById("sub-header");
     console.log(subHeader);
@@ -66,6 +70,48 @@
       subParagraphs.innerHTML= "Mission Accomplished!";
 
   })();
+
+
+
+  function changeHeader(event){
+    var mainHeader = document.getElementById("main-header");
+    console.log(mainHeader);
+    mainHeader.innerHTML = "JavaScript is Cool";
+  }
+
+  let originalHeader = "Hello World!";
+
+  let btn1 = document.getElementById("first");
+  btn1.addEventListener('click', changeHeader);
+
+
+
+   function restoreHeader (event) {
+    var mainHeader = document.getElementById("main-header");
+    mainHeader.innerHTML = originalHeader;
+
+  }
+  let btn2 = document.getElementById("second");
+  btn2.addEventListener('click', restoreHeader);
+
+  function changeBackground (event){
+    document.body.style.backgroundColor = "black";
+    document.body.style.color = "limegreen";
+  }
+
+
+  let btn3 = document.getElementById("third");
+  btn3.addEventListener('click', changeBackground);
+
+  function restoreDefault (event) {
+    document.body.style.backgroundColor = "white";
+    document.body.style.color = "black";
+  }
+
+  let btn4 = document.getElementById('last');
+  btn4.addEventListener("click", restoreDefault);
+
+
 </script>
 </body>
 </html>
