@@ -15,9 +15,10 @@
         <li>2</li>
         <li>3</li>
     </ul>
-
+<button id="btn1">Animate orange box</button>
+<button id="btn2">Reset orange</button>
 <div class="container"></div>
-<div id="second-box"></div>
+<div id="second-box" style="border: solid black 1px; background-color: orange; height: 50px; width:50px; margin: 5px;"></div>
 
 
 
@@ -55,15 +56,23 @@
 
     $('li').css('color','green');
     $('.container').css('background-color','pink').css('height','50px').css('width', '50px');
-    $("#second-box").css({
-        'background-color': 'orange',
-        'display': 'flex',
-        'justify-content': 'center',
-        'align-items': 'center',
-        'margin' : 'auto',
-        'height': '50px',
-        'width': '50px'
+    // $("#second-box").css({
+    //     'background-color': 'orange',
+    //     'display': 'flex',
+    //     'justify-content': 'center',
+    //     'align-items': 'center',
+    //     'margin' : 'auto',
+    //     'height': '50px',
+    //     'width': '50px'
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            $('#second-box').animate({right: "100px"});
+        });
+        $('#btn2').click(function(){
+            $('#second-box').animate({left: "100px"});
+        });
     });
+
 
 </script>
 
