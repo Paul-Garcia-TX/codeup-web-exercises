@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<main>
+<main id="main">
 
 
 <h1>Welcome</h1>
@@ -18,15 +18,40 @@
 <label style="display: flex; justify-content: center; align-items: center; margin-top: 7em;" for="password"><input type="text" id="password"></label>
 
 
-
+    <audio id="myAudio">
+        <source src="audio/Metal%20Gear%20Solid%201%20-%20Encounter.mp3" type="audio/mpeg">
+    </audio>
 
 
 </main>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
 <script>
-    $('#body').css('background-color', 'red');
+    // $(document).keyup(function(event){
+    //    console.log(event.keyCode);
+    // });
+    let konami = [];
+    let konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+
+    let audio = document.getElementById("myAudio");
+
+
+    $(document).keydown(function(event){
+        konami.push(event.keyCode);
+        if(konami.toString().indexOf(konamiCode) >= 0){
+            alert("Konami code entered!");
+            $('#main').css('background-image', 'url(https://preview.redd.it/gnbbec86xmp61.jpg?width=1920&format=pjpg&auto=webp&v=enabled&s=67b906cbc0dfe1c51db452bacc12df49cd9f4e65)');
+            let audio = document.getElementById("myAudio");
+            audio.play();
+        }
+    });
+
+
 
 </script>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
 </body>
 </html>
+
+
