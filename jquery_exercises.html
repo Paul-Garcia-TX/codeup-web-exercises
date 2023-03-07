@@ -10,27 +10,23 @@
 
 <h1 id="header"> Hello world!</h1>
     <p class="paragraph">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+    <button id="doubleclick">Make bigger</button>
     <ul id="list">
         <li>1</li>
         <li>2</li>
         <li>3</li>
     </ul>
-<button id="btn1">Animate orange box</button>
-<button id="btn2">Reset orange</button>
-<div class="container"></div>
-<div id="second-box" style="border: solid black 1px; background-color: orange; height: 50px; width:50px; margin: 5px;"></div>
-
-
-
-
-
-
-
-
-
-
-
-
+    <button id="button">Change Header</button>
+    <div class="container" style="display: flex; justify-content: space-between">
+            <button style="margin: 1em;" id="btn1">Animate orange box</button>
+            <button style="margin: 1em;" id="btn2">Reset orange</button>
+                <button style="margin: 1em;" id="btn3">Down</button>
+                <button style="margin: 1em;" id="btn4">Up</button>
+                     <br>
+            <div class="container" style="border: solid black 1px; background-color: red; height: 50px; width:50px; margin: auto;position: relative"></div>
+        <br>
+            <div id="second-box" style="border: solid black 1px; background-color: orange; height: 50px; width:50px; margin: 5px;position: absolute"></div>
+    </div>
 
 
 </main>
@@ -43,7 +39,7 @@
     // $(function (){
     //     alert("Dom loaded?");
     // });
-    $('*').css('background-color', 'gray').css('color', 'black');
+    $('*').css('color', 'black');
     $('#header').css('color','purple').css('font-weight','italic');
 
     $('.paragraph').hover(
@@ -55,7 +51,7 @@
         });
 
     $('li').css('color','green');
-    $('.container').css('background-color','pink').css('height','50px').css('width', '50px');
+    // $('.container').css('background-color','pink').css('height','50px').css('width', '50px');
     // $("#second-box").css({
     //     'background-color': 'orange',
     //     'display': 'flex',
@@ -66,10 +62,26 @@
     //     'width': '50px'
     $(document).ready(function(){
         $("#btn1").click(function(){
-            $('#second-box').animate({right: "100px"});
+            $('#second-box').stop().animate({right: "50px"});
         });
         $('#btn2').click(function(){
-            $('#second-box').animate({left: "100px"});
+            $('#second-box').stop().animate({left: "50px"});
+        });
+        $('#btn3').click(function(){
+            $('#second-box').stop().animate({bottom: "150px"});
+        });
+        $('#btn4').click(function(){
+            $('#second-box').stop().animate({top: "270px"});
+        });
+    });
+    $(document).ready(function(){
+        $('#button').click(function(){
+           $("#header").css('color', 'blue');
+        });
+    });
+    $(document).ready(function(){
+        $('#doubleclick').dblclick(function(){
+            $(".paragraph").css('font-size', '18px');
         });
     });
 
