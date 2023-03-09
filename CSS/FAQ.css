@@ -23,31 +23,39 @@ body{
     margin: 5rem;
     display: flex;
     flex-direction: column;
-    border: solid black 1px;
-    max-width: 500px;
 
-    animation-duration: 3s;
-    animation-name: slidein;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    max-width: 500px;
+    transition: all 1s ease;
+    transform-style: preserve-3d;
+    border: solid black 4px;
+
 
 
 }
 .card-body{
     background-color: whitesmoke;
-    border: solid green 1px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    backface-visibility: hidden;
+    width:84%;
+    height:100%;
+    padding:40px;
 
 
 }
+.card-title{
+    display: flex;
+    justify-content: space-between;
+
+}
 .card-img-top{
-    max-height: 80px;
-    max-width: 360px;
+    z-index:2;
+    transform: rotateX(0deg);
+   width:100%
+   height: 100%;
 }
 .card-text{
 
     display: none;
-    animation-name: fadeInOut, moveLeft300px, bounce;
-    animation-duration: 2.5s, 5s, 1s;
-    animation-iteration-count: 2, 1, 5;
+
 
 }
