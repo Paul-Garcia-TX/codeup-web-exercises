@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+
+<main class="container container-fluid">
+
+    <h1>Welcome to my blog!</h1>
+    <div class="border m-auto">
+        <div  id="title">
+            <p id="body"></p>
+            <p id="date"></p>
+        </div>
+    </div>
+
+
+
+
+
+
+</main>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+
+    $.get('Data/blog.json').done(function(data){
+
+        let firstBlog = "";
+
+        const firstData = data[0];
+
+        firstBlog += "<div>";
+        firstBlog += "<h3>" + firstData.title + "</h3>";
+        firstBlog += "<p>" + firstData.content + "</p>";
+        firstBlog += "<p>" + firstData.categories + "</p>";
+        firstBlog += "<p>" + firstData.date + "</p>";
+        firstBlog += "</div>";
+        console.log(firstData);
+        console.log(firstBlog);
+        $("#title").append(firstBlog);
+
+        let secondBlog = "";
+
+        const secondData = data[1];
+
+        secondBlog += "<div>";
+        secondBlog += "<h3>" + secondData.title + "</h3>";
+        secondBlog += "<p>" + secondData.content + "</p>";
+        secondBlog += "<p>" + secondData.categories + "</p>";
+        secondBlog += "<p>" + secondData.date + "</p>";
+        secondBlog += "</div>";
+        $("#title").append(secondBlog);
+
+
+
+
+
+    });
+
+
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+
+</body>
+</html>
