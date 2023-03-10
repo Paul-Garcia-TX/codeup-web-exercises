@@ -13,11 +13,9 @@
   #map {
     /* the width and height may be set to any size */
     width: 70%;
-    height: 550px;
+    height: 470px;
     border: solid 3px dimgray;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 55%;
     margin: auto;
     padding: 4rem;
   }
@@ -69,33 +67,23 @@
     map.setCenter(result);
     map.setZoom(10);
   });
-  var Tucanos = {
-    address: "110 Central Ave SW, Albuquerque, NM 87102",
-    popupHTML: "<p>Tucanos is amazing!</p>"
-  };
-  var Powdrells = {
-    address: "11301 Central Ave NE, Albuquerque, NM 87123",
-    popupHTML: "<p>Come here for the Po Boy!</p>"
-  };
+  var locations = [  {    address: "110 Central Ave SW, Albuquerque, NM 87102",    popupHTML: "<p>Tucanos is amazing!</p>"  },
+    {    address: "11301 Central Ave NE, Albuquerque, NM 87123",    popupHTML: "<p>Come here for the Po Boy!</p>"  },
+    {    address: "921 San Pedro Dr SE Albuquerque, NM 87108",    popupHTML: "<p>Best Pizza in  town!</p>"  }];
+  function placeMarkersAndPopups(locations, token, map) {
+    locations.forEach(function(info) {
+      geocode(info.address, token).then(function(coordinates) {
+        var popup = new mapboxgl.Popup()
+                .setHTML(info.popupHTML);
+        var marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map)
+                .setPopup(popup);
 
-  var Giovannis = {
-    address: "921 San Pedro Dr SE Albuquerque, NM 87108",
-    popupHTML: "<p>Best Pizza in  town!</p>"
-  };
-  function placeMarkerAndPopup(info, token, map) {
-    geocode(info.address, token).then(function(coordinates) {
-      var popup = new mapboxgl.Popup()
-              .setHTML(info.popupHTML);
-      var marker = new mapboxgl.Marker()
-              .setLngLat(coordinates)
-              .addTo(map)
-              .setPopup(popup);
-      popup.addTo(map);
+      });
     });
   }
-  placeMarkerAndPopup(Powdrells, mapboxgl.accessToken, map);
-  placeMarkerAndPopup(Tucanos, mapboxgl.accessToken, map);
-  placeMarkerAndPopup(Giovannis, mapboxgl.accessToken, map);
+  placeMarkersAndPopups(locations, mapboxgl.accessToken, map);
 
 </script>
 
