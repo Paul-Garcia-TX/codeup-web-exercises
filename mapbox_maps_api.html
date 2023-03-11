@@ -8,28 +8,57 @@
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
   <style>
     body, main{
-      background-color: #3B5998;
+      background-color: darkturquoise;
+      height: 700px;
     }
   #map {
     /* the width and height may be set to any size */
     width: 70%;
     height: 470px;
-    border: solid 3px dimgray;
+    border: dashed 4px goldenrod;
     border-radius: 55%;
     margin: auto;
     padding: 4rem;
+  }
+  #input {
+    margin-top: 3rem;
+  }
+  marker{
+    background-image: url("img/food.png");
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+
   }
 </style>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 <body>
 <main class="container">
-<h1 class="text-success text-center">My First Mapbox Map!</h1>
+<h1 class=" text-center">Great food in Albuquerque, NM!</h1>
 
 <!-- The HTML element that serves as the Mapbox container -->
-<div id='map' ></div>
+<div id='map' >
+
+</div>
+
+  <div class="dropdown">
 
 
+    <div class="btn-group" role="group" aria-labelledby="buttongroup">
+      <button id="zoom1" class="btn btn-success" type="button">5</button>
+      <button id="zoom2" class="btn btn-warning" type="button">10</button>
+      <button id="zoom3" class="btn btn-danger" type="button">20</button>
+    </div>
+
+  </div>
+
+  <div id="input" class="input-group mb-3">
+    <input id="searchbar" type="text" class="form-control" placeholder="Search for a new place" aria-label="location search" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+      <span class="input-group-text" id="search">Search!</span>
+    </div>
+  </div>
 
 
 </main>
@@ -37,14 +66,14 @@
 
 
 
-
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
 <script>
   mapboxgl.accessToken = 'pk.eyJ1IjoicGF1bG5nYXJjaWEiLCJhIjoiY2xmMm9yanIwMGtpNzNyazdkZDY5NWhpdCJ9.S5vaMxkEfllNbXc2OcT1bA';
   var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
-    zoom: 20
+    zoom: 10
 
   });
 
@@ -65,29 +94,89 @@
   geocode("Albuquerque, NM 87102", mapboxgl.accessToken).then(function(result) {
     console.log(result);
     map.setCenter(result);
-    map.setZoom(10);
+
   });
-  var locations = [  {    address: "110 Central Ave SW, Albuquerque, NM 87102",    popupHTML: "<p>Tucanos is amazing!</p>"  },
-    {    address: "11301 Central Ave NE, Albuquerque, NM 87123",    popupHTML: "<p>Come here for the Po Boy!</p>"  },
-    {    address: "921 San Pedro Dr SE Albuquerque, NM 87108",    popupHTML: "<p>Best Pizza in  town!</p>"  }];
+  var locations = [ 
+    { address: "110 Central Ave SW, Albuquerque, NM 87102",    popupHTML:      "<div><p>Tucanos is amazing!</p><img src='https://www.tucanos.com/storage/app/uploads/public/0d5/b8b/e80/thumb__768_0_0_0_auto.jpg' style='max-width: 100%;'></div>",  },
+
+    { address: "11301 Central Ave NE, Albuquerque, NM 87123",    popupHTML: "<div><p>Come here for the Po Boy!</p><img src='https://media-cdn.tripadvisor.com/media/photo-s/12/90/2c/0d/small-brisket-sammie.jpg' style='max-width: 100%;' alt='pizza'></div>",  },
+
+    { address: "921 San Pedro Dr SE Albuquerque, NM 87108",    popupHTML: "<div><p>Best Pizza In Town!</p><img src='img/pizza.jpg' style='max-width: 100%;' alt='pizza'></div>",  },];
+
+
+
+
   function placeMarkersAndPopups(locations, token, map) {
-    locations.forEach(function(info) {
-      geocode(info.address, token).then(function(coordinates) {
-        var popup = new mapboxgl.Popup()
-                .setHTML(info.popupHTML);
-        var marker = new mapboxgl.Marker()
+    locations.forEach(function (info) {
+      geocode(info.address, token).then(function (coordinates) {
+        var popup = new mapboxgl.Popup().setHTML(info.popupHTML);
+        var marker = new mapboxgl.Marker({
+
+        })
                 .setLngLat(coordinates)
                 .addTo(map)
                 .setPopup(popup);
-
       });
     });
   }
+
+
+
+  let userinput = "";
+
+  $(document).ready(function() {
+    $("#search").click(function() {
+      userinput = $("#searchbar").val();
+      geocode(userinput, mapboxgl.accessToken).then(function(result) {
+
+        map.setCenter(result);
+      });
+
+    });
+  });
+
+
   placeMarkersAndPopups(locations, mapboxgl.accessToken, map);
+
+
+
+
+//change zoom levels
+
+  $(document).ready(function(){
+    $("#zoom1").click(function(){
+      map.setZoom(5);
+      console.log("Why use colors?");
+    });
+  });
+  $(document).ready(function(){
+    $("#zoom2").click(function(){
+      map.setZoom(10);
+      console.log("Well it actually has something to do with Tucanos");
+    });
+  });
+  $(document).ready(function(){
+    $("#zoom3").click(function(){
+      map.setZoom(20);
+      console.log("You use the colors to signify if you want more food or not");
+    });
+  });
+
+
+
+
+
 
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
 </body>
 </html>
