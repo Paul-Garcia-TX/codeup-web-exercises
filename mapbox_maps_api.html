@@ -120,7 +120,7 @@
     });
   }
 
-
+  placeMarkersAndPopups(locations, mapboxgl.accessToken, map);
 
   let userinput = "";
 
@@ -129,14 +129,20 @@
       userinput = $("#searchbar").val();
       geocode(userinput, mapboxgl.accessToken).then(function(result) {
 
-        map.setCenter(result);
+        map.flyTo({center:result,
+        zoom: 15,
+          speed: .5
+        });
+        var marker = new mapboxgl.Marker()
+        .setLngLat(result)
+                .addTo(map);
       });
 
     });
   });
 
 
-  placeMarkersAndPopups(locations, mapboxgl.accessToken, map);
+
 
 
 
