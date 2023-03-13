@@ -76,13 +76,26 @@ header h6 {
     padding: 1rem;
 }
 #cards{
-    border: yellow solid 3px;
+    /*border: yellow solid 3px;*/
     display: flex;
     justify-content: space-evenly;
     margin: 3rem;
 }
 .card{
-    border: solid red 5px;
+    /*border: solid red 5px;*/
     width: 245px;
     height: 350px;
+}
+.coordinates {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 18px;
+    border-radius: 3px;
+    display: none;
 }

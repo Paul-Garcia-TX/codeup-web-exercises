@@ -1,8 +1,4 @@
-$(document).ready(function() {
-    $('#my-button').click(function() {
-        alert('Hello, world!');
-    });
-});
+
 const mapboxToken = "pk.eyJ1IjoicGF1bG5nYXJjaWEiLCJhIjoiY2xmMm9yanIwMGtpNzNyazdkZDY5NWhpdCJ9.S5vaMxkEfllNbXc2OcT1bA";
 const openWeather = "190a1dcab33040d6dbf6cbd4eded6702";
 
@@ -57,43 +53,57 @@ $(document).ready(function() {
     $("#search").click(function() {
         userinput = $("#searchbar").val();
         geocode(userinput, mapboxgl.accessToken).then(function(result) {
-
             map.setCenter(result);
+            var mapElement = document.getElementById("map");
+            mapElement.scrollIntoView({behavior: "smooth"});
         });
-
     });
 });
+const canvas = map.getCanvasContainer();
 
-
-placeMarkersAndPopups(locations, mapboxgl.accessToken, map);
-
-function updateCityName() {
-    var center = map.getCenter();
-    geocode(center.lng + ',' + center.lat, mapboxgl.accessToken).then(function(result) {
-        var city = result.features.find(function(feature) {
-            return feature.place_type.includes('place');
-        });
-        if (city) {
-            var cityName = city.text;
-            document.getElementById('current-city').innerHTML = 'Current City: ' + cityName;
+const geojson = {
+    'type': 'FeatureCollection',
+    'features': [
+        {
+            'type': 'Feature',
+            'geometry': {
+                'type': 'Point',
+                'coordinates': result
+            }
         }
-    });
-}
+    ]
+};
 
-$(document).ready(function() {
-    $("#search").click(function() {
-        var userinput = $("#searchbar").val();
-        geocode(userinput, mapboxgl.accessToken).then(function(result) {
-            map.setCenter(result);
-            updateCityName();
+mapboxgl.accessToken = 'pk.eyJ1IjoicGF1bG5nYXJjaWEiLCJhIjoiY2xmMm9yanIwMGtpNzNyazdkZDY5NWhpdCJ9.S5vaMxkEfllNbXc2OcT1bA';
+const mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+mapboxClient.geocoding
+    .forwardGeocode({
+        query: 'Austin, TX',
+        autocomplete: false,
+        limit: 1
+    })
+    .send()
+    .then((response) => {
+        if (
+            !response ||
+            !response.body ||
+            !response.body.features ||
+            !response.body.features.length
+        ) {
+            console.error('Invalid response:');
+            console.error(response);
+            return;
+        }
+        const feature = response.body.features[0];
+
+        const map = new mapboxgl.Map({
+            container: 'map',
+// Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+            style: 'mapbox://styles/mapbox/streets-v12',
+            center: feature.center,
+            zoom: 10
         });
+
+// Create a marker and add it to the map.
+        new mapboxgl.Marker().setLngLat(feature.center).addTo(map);
     });
-});
-
-function updateCurrentCityName(cityName) {
-    var currentCity = document.getElementById("current-city");
-    currentCity.textContent = "Current City: " + cityName;
-}
-
-updateCurrentCityName();
-updateCityName();
