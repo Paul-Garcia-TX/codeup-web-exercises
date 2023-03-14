@@ -35,7 +35,8 @@ html {
 }
 header {
     color: #FFF;
-
+    text-shadow: 0 0 3px #CE5E82, 0 0 5px #2E4770;
+    background-image: url("/img/8bit.jpg");
 
     text-align: center;
     border-radius: 20px;
