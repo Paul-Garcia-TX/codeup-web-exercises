@@ -12,87 +12,99 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Press+Start+2P&display=swap" rel="stylesheet">
 <!--    stylesheet-->
     <link rel="stylesheet" href="CSS/weathermap.css">
 
 
 </head>
 <body>
-<header class="column-xs main-xs-between cross-xs-center full-image-wrap">
+                    <header class="column-xs main-xs-between cross-xs-center full-image-wrap">
 
-    <h2>Weather Map</h2>
-    <h6 id="current-city"></h6>
-</header>
-<main>
+                        <h2>Weather Map</h2>
+                        <h6 id="current-city"></h6>
+                    </header>
+                    <main>
 
-    <div id="input" class="input-group mb-3">
-        <input id="searchbar" type="text" class="form-control" placeholder="Search for a place to get the weather" aria-label="location search" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-            <span class="input-group-text" id="search">Search!</span>
-        </div>
-    </div>
-    <div id="cards">
-
-        <div id="row" class="row row-cols-1 row-cols-md-5 g-5">
-            <div class="col">
-                <div class="card">
-
-                    <div id="cardOne" class="card-body">
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-
-                    <div id="cardTwo" class="card-body">
-
-                    </div>
-
-
-                </div>
-            </div>
-            <div class="col">
-                <div id="cardThree" class="card">
-
-                    <div class="card-body">
-
-                    </div>
-
-
-                </div>
-            </div>
-            <div class="col d-none d-lg-block">
-                <div class="card">
-
-                    <div id="cardFour" class="card-body">
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col d-none d-lg-block">
-                <div class="card">
-
-                    <div id="cardFive" class="card-body">
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
+                        <div id="input" class="input-group mb-3">
+                            <input id="searchbar" type="text" class="form-control" placeholder="Search for a place to get the weather" aria-label="location search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="search">Search!</span>
+                            </div>
+                        </div>
 
 
 
-    </div>
-
-    <div id="map"></div>
-    <pre id="coordinates" class="coordinates"></pre>
+                        <div id="map"></div>
 
 
 
-</main>
+                        <div  class="container-fluid px-1 px-md-4 py-5 mx-auto" id="cards">
+
+                            <div id="row" class="row row-cols-1 row-cols-md-5 g-5">
+                                <div class="col">
+                                    <div class="card">
+
+                                        <div id="cardOne" class="card-body">
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+
+                                        <div id="cardTwo" class="card-body">
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div id="cardThree" class="card">
+
+                                        <div class="card-body">
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="row" class="row row-cols-1 row-cols-md-5 g-5">
+                                <div class="col d-none d-lg-block">
+                                    <div class="card">
+
+                                        <div id="cardFour" class="card-body">
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col d-none d-lg-block">
+                                    <div class="card">
+
+                                        <div id="cardFive" class="card-body">
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+
+                        <pre id="coordinates" class="coordinates"></pre>
+
+
+
+                    </main>
 <script src="keys/keys.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 

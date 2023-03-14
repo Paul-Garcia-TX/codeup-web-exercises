@@ -6,7 +6,7 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoicGF1bG5nYXJjaWEiLCJhIjoiY2xmMm9yanIwMGtpNzNyazdkZDY5NWhpdCJ9.S5vaMxkEfllNbXc2OcT1bA';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11',
+    style: 'mapbox://styles/mapbox/dark-v11',
     zoom: 10
 
 });
@@ -84,16 +84,17 @@ function fetchWeatherData(lat, lon, locationName) {
             units: "imperial",
         }
     }).done(function(data) {
+        console.log(data);
         // current weather data
         let html = "";
-        html += '<div>';
+        // html += '<div class="row d-flex justify-content-center px-3">';
 
-        html += '<p>Temp: ' + parseInt(data.current.temp) + '&#8457; </p>';
-        html += '<p>Conditions: ' + data.current.weather[0].description + ' </p>';
-        html += '<p>Humidity: ' + data.current.humidity + '% </p>';
-        html += '<p>Wind: ' + parseInt(data.current.wind_speed) + ' mph </p>';
-        html += '<p>Gusts: ' + parseInt(data.current.wind_gust) + ' mph </p>';
-        html += '</div>'
+        html += '<p class="ml-auto mr-4 mt-3 mb-0">Temp: ' + parseInt(data.current.temp) + '&#8457; </p>';
+        html += '<p class="ml-auto mr-4 mb-0 med-font">Conditions: ' + data.current.weather[0].description + ' </p>';
+        html += '<p class="ml-auto mr-4 large-font">Humidity: ' + data.current.humidity + '% </p>';
+        html += '<p class="time-font mb-0 ml-4 mt-auto">Wind: ' + parseInt(data.current.wind_speed) + ' mph </p>';
+        html += '<p class="ml-4 mb-4">Gusts: ' + parseInt(data.current.wind_gust) + ' mph </p>';
+        // html += '</div>'
 
         document.getElementById("current-city").innerHTML = html;
         // day one forecast

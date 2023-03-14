@@ -1,5 +1,18 @@
+*{
+    font-family: 'Press Start 2P', cursive;
+}
+
 body {
-    background-color: #3B5998;
+    /*background: radial-gradient(ellipse at center, rgba(127,0,173,0.6) 0%,*/
+    /*rgba(0,0,0,0.8) 60%,*/
+    /*rgba(0,0,0,1) 90%)*/
+    ;
+    background-size: cover;
+    background-image: url("/img/dreamwave.png");
+
+
+
+
 
 }
 main{
@@ -16,28 +29,14 @@ header {
     font-family: 'Playfair Display', serif;
     text-shadow: 0 0 3px #FFF, 0 0 5px #000;
     text-align: center;
-    background-image: url("/img/bbhill.png");
-    background-size: cover;
+    animation: neon1 1.5s ease-in-out infinite alternate;
     height: 480px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
 }
-#image {
-    min-height: 100%;
-    overflow: hidden;
-    position: relative;
-}
-.full-image {
-    height: auto;
-    left: 0;
-    min-height: 100%;
-    min-width: 100%;
-    position: absolute;
-    top: 0;
-    width: auto;
-}
+
 header h2 {
 
 
@@ -67,7 +66,7 @@ header h6 {
 }
 #map {
     /* the width and height may be set to any size */
-    width: 85%;
+    width: 45%;
     height: 400px;
 
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
@@ -76,33 +75,21 @@ header h6 {
     padding: 1rem;
 }
 #cards{
-    /*border: yellow solid 3px;*/
-    display: flex;
-    justify-content: space-between;
-    margin: 3rem;
+    /*!*border: yellow solid 3px;*!*/
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+    /*margin: 3rem;*/
 
 }
 .card{
     /*border: solid red 5px;*/
-    width: 245px;
+    background-color: #200D3A;
+    color: #ECC6A2;
+    width: 600px;
     height: 350px;
-    margin: 3rem;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px 4px #CE5E82;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
-#row{
-    border: solid 1px red;
-    display: flex;
-    justify-content: space-between;
-}
-.coordinates {
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    position: absolute;
-    bottom: 40px;
-    left: 10px;
-    padding: 5px 10px;
-    margin: 0;
-    font-size: 11px;
-    line-height: 18px;
-    border-radius: 3px;
-    display: none;
-}
+
