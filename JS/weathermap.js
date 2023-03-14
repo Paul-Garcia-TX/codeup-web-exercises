@@ -27,6 +27,7 @@ geocode("2090 Airport Rd, New Braunfels, TX", mapboxgl.accessToken).then(functio
     fetchWeatherData(result[1], result[0]);
     var marker = new mapboxgl.Marker({
         draggable: true,
+        className: 'marker'
     })
         .setLngLat(result)
         .addTo(map);
@@ -48,6 +49,7 @@ geocode("2090 Airport Rd, New Braunfels, TX", mapboxgl.accessToken).then(functio
             });
             var marker = new mapboxgl.Marker({
                 draggable: true,
+                className: 'marker'
             })
                 .setLngLat(result)
                 .addTo(map);
@@ -88,82 +90,97 @@ function fetchWeatherData(lat, lon, locationName) {
         // current weather data
         let html = "";
         // html += '<div class="row d-flex justify-content-center px-3">';
+        const currentDate = new Date(data.current.dt * 1000).toLocaleDateString();
 
-        html += '<p class="ml-auto mr-4 mt-3 mb-0">Temp: ' + parseInt(data.current.temp) + '&#8457; </p>';
-        html += '<p class="ml-auto mr-4 mb-0 med-font">Conditions: ' + data.current.weather[0].description + ' </p>';
-        html += '<p class="ml-auto mr-4 large-font">Humidity: ' + data.current.humidity + '% </p>';
-        html += '<p class="time-font mb-0 ml-4 mt-auto">Wind: ' + parseInt(data.current.wind_speed) + ' mph </p>';
-        html += '<p class="ml-4 mb-4">Gusts: ' + parseInt(data.current.wind_gust) + ' mph </p>';
+        html += '<h5>Todays Weather: '+ currentDate + '</h5>';
+        html += '<p>Temp: ' + parseInt(data.current.temp) + '&#8457; </p>';
+        html += '<p >Conditions: ' + data.current.weather[0].description + ' </p>';
+        html += '<p>Humidity: ' + data.current.humidity + '% </p>';
+        html += '<p>Wind: ' + parseInt(data.current.wind_speed) + ' mph </p>';
+        html += '<p>Gusts: ' + parseInt(data.current.wind_gust) + ' mph </p>';
         // html += '</div>'
 
         document.getElementById("current-city").innerHTML = html;
         // day one forecast
 
         let dayOne ="";
+        const dayOneDate = new Date(data.daily[1].dt * 1000).toLocaleDateString();
 
+        dayOne += '<p>Date: ' + dayOneDate + '</p>';
+        dayOne += '<p>Avg: ' + parseInt(data.daily[1].temp.day) + '&#8457; </p>';
+        dayOne += '<p>High: ' + parseInt(data.daily[1].temp.max) + '&#8457; </p>';
+        dayOne += '<p>Low: ' + parseInt(data.daily[1].temp.morn) + '&#8457; </p>';
+        dayOne += '<p>Conditions: ' + data.daily[1].weather[0].description + ' </p>';
+        dayOne += '<p>Humidity: ' + data.daily[1].humidity + '% </p>';
+        dayOne += '<p>Wind: ' + parseInt(data.daily[1].wind_speed) + ' mph </p>';
+        dayOne += '<p>Gusts: ' + parseInt(data.daily[1].wind_gust) + ' mph </p>';
 
-        dayOne += '<p>Temp: ' + parseInt(data.daily[0].temp.day) + '&#8457; </p>';
-        dayOne += '<p>High: ' + parseInt(data.daily[0].temp.max) + '&#8457; </p>';
-        dayOne += '<p>Low: ' + parseInt(data.daily[0].temp.morn) + '&#8457; </p>';
-        dayOne += '<p>Conditions: ' + data.daily[0].weather[0].description + ' </p>';
-        dayOne += '<p>Humidity: ' + data.daily[0].humidity + '% </p>';
-        dayOne += '<p>Wind: ' + parseInt(data.daily[0].wind_speed) + ' mph </p>';
-        dayOne += '<p>Gusts: ' + parseInt(data.daily[0].wind_gust) + ' mph </p>';
-        dayOne += '</div>'
 
         document.getElementById("cardOne").innerHTML = dayOne;
 
         // day two of forecast
 
         let dayTwo ="";
+        const dayTwoDate = new Date(data.daily[2].dt * 1000).toLocaleDateString();
 
-        dayTwo += '<p>Temp: ' + parseInt(data.daily[1].temp.day) + '&#8457; </p>';
-        dayTwo += '<p>High: ' + parseInt(data.daily[1].temp.max) + '&#8457; </p>';
-        dayTwo += '<p>Low: ' + parseInt(data.daily[1].temp.morn) + '&#8457; </p>';
-        dayTwo += '<p>Conditions: ' + data.daily[1].weather[0].description + ' </p>';
-        dayTwo += '<p>Humidity: ' + data.daily[1].humidity + '% </p>';
-        dayTwo += '<p>Wind: ' + parseInt(data.daily[1].wind_speed) + ' mph </p>';
-        dayTwo += '<p>Gusts: ' + parseInt(data.daily[1].wind_gust) + ' mph </p>';
-        dayTwo += '</div>'
+        dayTwo += '<p>Date: ' + dayTwoDate + '</p>';
+        dayTwo += '<p>Avg: ' + parseInt(data.daily[2].temp.day) + '&#8457; </p>';
+        dayTwo += '<p>High: ' + parseInt(data.daily[2].temp.max) + '&#8457; </p>';
+        dayTwo += '<p>Low: ' + parseInt(data.daily[2].temp.morn) + '&#8457; </p>';
+        dayTwo += '<p>Conditions: ' + data.daily[2].weather[0].description + ' </p>';
+        dayTwo += '<p>Humidity: ' + data.daily[2].humidity + '% </p>';
+        dayTwo += '<p>Wind: ' + parseInt(data.daily[2].wind_speed) + ' mph </p>';
+        dayTwo += '<p>Gusts: ' + parseInt(data.daily[2].wind_gust) + ' mph </p>';
+
 
         document.getElementById("cardTwo").innerHTML = dayTwo;
 
         let dayThree ="";
 
-        dayThree += '<p>Temp: ' + parseInt(data.daily[2].temp.day) + '&#8457; </p>';
-        dayThree += '<p>High: ' + parseInt(data.daily[2].temp.max) + '&#8457; </p>';
-        dayThree += '<p>Low: ' + parseInt(data.daily[2].temp.morn) + '&#8457; </p>';
-        dayThree += '<p>Conditions: ' + data.daily[2].weather[0].description + ' </p>';
-        dayThree += '<p>Humidity: ' + data.daily[2].humidity + '% </p>';
-        dayThree += '<p>Wind: ' + parseInt(data.daily[2].wind_speed) + ' mph </p>';
-        dayThree += '<p>Gusts: ' + parseInt(data.daily[2].wind_gust) + ' mph </p>';
-        dayThree += '</div>'
+        const dayThreeDate = new Date(data.daily[3].dt * 1000).toLocaleDateString();
+
+        dayThree += '<p>Date: ' + dayThreeDate + '</p>';
+        dayThree += '<p>Avg: ' + parseInt(data.daily[3].temp.day) + '&#8457; </p>';
+        dayThree += '<p>High: ' + parseInt(data.daily[3].temp.max) + '&#8457; </p>';
+        dayThree += '<p>Low: ' + parseInt(data.daily[3].temp.morn) + '&#8457; </p>';
+        dayThree += '<p>Conditions: ' + data.daily[3].weather[0].description + ' </p>';
+        dayThree += '<p>Humidity: ' + data.daily[3].humidity + '% </p>';
+        dayThree += '<p>Wind: ' + parseInt(data.daily[3].wind_speed) + ' mph </p>';
+        dayThree += '<p>Gusts: ' + parseInt(data.daily[3].wind_gust) + ' mph </p>';
+
 
         document.getElementById("cardThree").innerHTML = dayThree;
 
         let dayFour ="";
 
-        dayFour += '<p>Temp: ' + parseInt(data.daily[3].temp.day) + '&#8457; </p>';
-        dayFour += '<p>High: ' + parseInt(data.daily[3].temp.max) + '&#8457; </p>';
-        dayFour += '<p>Low: ' + parseInt(data.daily[3].temp.morn) + '&#8457; </p>';
-        dayFour += '<p>Conditions: ' + data.daily[3].weather[0].description + ' </p>';
-        dayFour += '<p>Humidity: ' + data.daily[3].humidity + '% </p>';
-        dayFour += '<p>Wind: ' + parseInt(data.daily[3].wind_speed) + ' mph </p>';
-        dayFour += '<p>Gusts: ' + parseInt(data.daily[3].wind_gust) + ' mph </p>';
-        dayFour += '</div>'
+        const dayFourDate = new Date(data.daily[4].dt * 1000).toLocaleDateString();
+
+        dayFour += '<p>Date: ' + dayFourDate + '</p>';
+        dayFour += '<p>Avg: ' + parseInt(data.daily[4].temp.day) + '&#8457; </p>';
+        dayFour += '<p>High: ' + parseInt(data.daily[4].temp.max) + '&#8457; </p>';
+        dayFour += '<p>Low: ' + parseInt(data.daily[4].temp.morn) + '&#8457; </p>';
+        dayFour += '<p>Conditions: ' + data.daily[4].weather[0].description + ' </p>';
+        dayFour += '<p>Humidity: ' + data.daily[4].humidity + '% </p>';
+        dayFour += '<p>Wind: ' + parseInt(data.daily[4].wind_speed) + ' mph </p>';
+        dayFour += '<p>Gusts: ' + parseInt(data.daily[4].wind_gust) + ' mph </p>';
+
 
         document.getElementById("cardFour").innerHTML = dayFour;
 
         let dayFive ="";
 
-        dayFive += '<p>Temp: ' + parseInt(data.daily[4].temp.day) + '&#8457; </p>';
-        dayFive += '<p>High: ' + parseInt(data.daily[4].temp.max) + '&#8457; </p>';
-        dayFive += '<p>Low: ' + parseInt(data.daily[4].temp.morn) + '&#8457; </p>';
-        dayFive += '<p>Conditions: ' + data.daily[4].weather[0].description + ' </p>';
-        dayFive += '<p>Humidity: ' + data.daily[4].humidity + '% </p>';
-        dayFive += '<p>Wind: ' + parseInt(data.daily[4].wind_speed) + ' mph </p>';
-        dayFive += '<p>Gusts: ' + parseInt(data.daily[4].wind_gust) + ' mph </p>';
-        dayFive += '</div>'
+
+        const dayFiveDate = new Date(data.daily[5].dt * 1000).toLocaleDateString();
+
+        dayFive += '<p>Date: ' + dayFiveDate + '</p>';
+        dayFive += '<p>Avg: ' + parseInt(data.daily[5].temp.day) + '&#8457; </p>';
+        dayFive += '<p>High: ' + parseInt(data.daily[5].temp.max) + '&#8457; </p>';
+        dayFive += '<p>Low: ' + parseInt(data.daily[5].temp.morn) + '&#8457; </p>';
+        dayFive += '<p>Conditions: ' + data.daily[5].weather[0].description + ' </p>';
+        dayFive += '<p>Humidity: ' + data.daily[5].humidity + '% </p>';
+        dayFive += '<p>Wind: ' + parseInt(data.daily[5].wind_speed) + ' mph </p>';
+        dayFive += '<p>Gusts: ' + parseInt(data.daily[5].wind_gust) + ' mph </p>';
+
 
         document.getElementById("cardFive").innerHTML = dayFive;
 
