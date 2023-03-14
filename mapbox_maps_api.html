@@ -26,8 +26,8 @@
   marker{
     background-image: url("img/food.png");
     background-size: cover;
-    width: 50px;
-    height: 50px;
+    width: 150px;
+    height: 150px;
 
   }
 </style>
@@ -133,7 +133,9 @@
         zoom: 15,
           speed: .5
         });
-        var marker = new mapboxgl.Marker()
+        var marker = new mapboxgl.Marker({
+          draggable: true
+        })
         .setLngLat(result)
                 .addTo(map);
       });

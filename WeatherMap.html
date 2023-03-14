@@ -22,103 +22,90 @@
 </head>
 <body>
 
-                    <header class="container">
-                        <div >
-                            <div class="face face1">
-                                <div class="content">
-                                    <h2>Retro Weather</h2>
-                                </div>
-                            </div>
-                            <div class="face face2">
-                                <div id="current-city"></div>
-                            </div>
+    <header class="container">
+        <div >
+            <div class="face face1">
+                <div class="content">
+                    <h2>Retro Weather</h2>
+                </div>
+            </div>
+            <div class="face face2">
+                <div id="current-city"></div>
+            </div>
+        </div>
+
+
+
+    </header>
+    <main>
+        <div class="shadow">
+
+        </div>
+        <div id="input" class="input-group mb-3">
+            <input id="searchbar" type="text" class="form-control" placeholder="Search for a place to get the weather" aria-label="location search" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <span class="input-group-text" id="search">Search!</span>
+            </div>
+        </div>
+
+
+
+        <div id="map"></div>
+
+
+
+        <div  class="container-fluid px-1 px-md-4 py-5 mx-auto" id="cards">
+
+            <div id="row" class="row row-cols-1 row-cols-md-5 g-5">
+                <div class="col">
+                    <div class="card">
+
+                        <div id="cardOne" class="card-body">
+
                         </div>
 
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
 
-
-                    </header>
-                    <main>
-                        <div class="shadow">
-
-                        </div>
-                        <div id="input" class="input-group mb-3">
-                            <input id="searchbar" type="text" class="form-control" placeholder="Search for a place to get the weather" aria-label="location search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <span class="input-group-text" id="search">Search!</span>
-                            </div>
-                        </div>
-
-
-
-                        <div id="map"></div>
-
-
-
-                        <div  class="container-fluid px-1 px-md-4 py-5 mx-auto" id="cards">
-
-                            <div id="row" class="row row-cols-1 row-cols-md-5 g-5">
-                                <div class="col">
-                                    <div class="card">
-
-                                        <div id="cardOne" class="card-body">
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card">
-
-                                        <div id="cardTwo" class="card-body">
-
-                                        </div>
-
-
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div id="row2" class="row row-cols-1 row-cols-md-5 g-5">
-                                <div class="col">
-                                    <div id="cardThree" class="card">
-
-                                        <div class="card-body">
-
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                                <div class="col d-none d-lg-block">
-                                    <div class="card">
-
-                                        <div id="cardFour" class="card-body">
-
-                                        </div>
-
-                                    </div>
-                                </div>
-<!--                                <div class="col d-none d-lg-block">-->
-<!--                                    <div class="card">-->
-
-<!--                                        <div id="cardFive" class="card-body">-->
-
-<!--                                        </div>-->
-
-<!--                                    </div>-->
-<!--                                </div>-->
-                            </div>
-
-
+                        <div id="cardTwo" class="card-body">
 
                         </div>
 
 
-                        <pre id="coordinates" class="coordinates"></pre>
+                    </div>
+                </div>
+
+            </div>
+            <div id="row2" class="row row-cols-1 row-cols-md-5 g-5">
+                <div class="col">
+                    <div id="cardThree" class="card">
+
+                        <div class="card-body">
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col d-none d-lg-block">
+                    <div class="card">
+
+                        <div id="cardFour" class="card-body">
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
 
 
 
-                    </main>
+        </div>
+
+    </main>
 <script src="keys/keys.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 

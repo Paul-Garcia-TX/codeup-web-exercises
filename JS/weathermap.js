@@ -93,6 +93,9 @@ function fetchWeatherData(lat, lon, locationName) {
         const currentDate = new Date(data.current.dt * 1000).toLocaleDateString();
 
         html += '<h5>Todays Weather: '+ currentDate + '</h5>';
+        html += '<div>'
+        html += '<img src="https://openweathermap.org/img/w/' + data.current.weather[0].icon + '.png">'
+        html += '</div>'
         html += '<p>Temp: ' + parseInt(data.current.temp) + '&#8457; </p>';
         html += '<p >Conditions: ' + data.current.weather[0].description + ' </p>';
         html += '<p>Humidity: ' + data.current.humidity + '% </p>';
@@ -107,6 +110,9 @@ function fetchWeatherData(lat, lon, locationName) {
         const dayOneDate = new Date(data.daily[1].dt * 1000).toLocaleDateString();
 
         dayOne += '<p>Date: ' + dayOneDate + '</p>';
+        dayOne += '<div>';
+        dayOne += '<img src="https://openweathermap.org/img/w/' + data.daily[1].weather[0].icon + '.png">';
+        dayOne += '</div>';
         dayOne += '<p>Avg: ' + parseInt(data.daily[1].temp.day) + '&#8457; </p>';
         dayOne += '<p>High: ' + parseInt(data.daily[1].temp.max) + '&#8457; </p>';
         dayOne += '<p>Low: ' + parseInt(data.daily[1].temp.morn) + '&#8457; </p>';
@@ -124,6 +130,9 @@ function fetchWeatherData(lat, lon, locationName) {
         const dayTwoDate = new Date(data.daily[2].dt * 1000).toLocaleDateString();
 
         dayTwo += '<p>Date: ' + dayTwoDate + '</p>';
+        dayTwo += '<div>';
+        dayTwo += '<img src="https://openweathermap.org/img/w/' + data.daily[2].weather[0].icon + '.png">';
+        dayTwo += '</div>';
         dayTwo += '<p>Avg: ' + parseInt(data.daily[2].temp.day) + '&#8457; </p>';
         dayTwo += '<p>High: ' + parseInt(data.daily[2].temp.max) + '&#8457; </p>';
         dayTwo += '<p>Low: ' + parseInt(data.daily[2].temp.morn) + '&#8457; </p>';
@@ -140,6 +149,9 @@ function fetchWeatherData(lat, lon, locationName) {
         const dayThreeDate = new Date(data.daily[3].dt * 1000).toLocaleDateString();
 
         dayThree += '<p>Date: ' + dayThreeDate + '</p>';
+        dayThree += '<div>'
+        dayThree += '<img src="https://openweathermap.org/img/w/' + data.daily[3].weather[0].icon + '.png">';
+        dayThree += '</div>';
         dayThree += '<p>Avg: ' + parseInt(data.daily[3].temp.day) + '&#8457; </p>';
         dayThree += '<p>High: ' + parseInt(data.daily[3].temp.max) + '&#8457; </p>';
         dayThree += '<p>Low: ' + parseInt(data.daily[3].temp.morn) + '&#8457; </p>';
@@ -156,6 +168,9 @@ function fetchWeatherData(lat, lon, locationName) {
         const dayFourDate = new Date(data.daily[4].dt * 1000).toLocaleDateString();
 
         dayFour += '<p>Date: ' + dayFourDate + '</p>';
+        dayFour += '<div>'
+        dayFour += '<img src="https://openweathermap.org/img/w/' + data.daily[4].weather[0].icon + '.png">';
+        dayFour += '</div>';
         dayFour += '<p>Avg: ' + parseInt(data.daily[4].temp.day) + '&#8457; </p>';
         dayFour += '<p>High: ' + parseInt(data.daily[4].temp.max) + '&#8457; </p>';
         dayFour += '<p>Low: ' + parseInt(data.daily[4].temp.morn) + '&#8457; </p>';
