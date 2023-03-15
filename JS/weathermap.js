@@ -54,7 +54,7 @@ geocode("2090 Airport Rd, New Braunfels, TX", mapboxgl.accessToken).then(functio
                 .setLngLat(result)
                 .addTo(map);
             document.getElementById("map").scrollIntoView();
-            fetchWeatherData(result[0], result[1], userinput);
+            fetchWeatherData(result[1], result[0], userinput);
             marker.on('dragend', function() {
                 var newCenter = marker.getLngLat();
                 map.setCenter(newCenter);
