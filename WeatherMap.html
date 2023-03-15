@@ -24,12 +24,12 @@
 <!--<video id="video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">-->
 <!--    <source src="img/retro-80s.mp4" type="video/mp4">-->
 <!--</video>-->
-    <header class="container">
+    <header class="container mt-6 d-flex justify-content-center align-items-center">
         <div >
 
             <div class="face face1">
                 <div class="content">
-                    <h2>Retro Weather</h2>
+                    <h2>CyberSky</h2>
                 </div>
             </div>
             <div class="face face2">
@@ -41,10 +41,8 @@
 
     </header>
     <main>
-        <div class="shadow">
 
-        </div>
-        <div id="input" class="input-group mb-3">
+        <div id="input" class="input-group mt-4 mb-5 d-flex justify-content-center align-items-center">
             <input id="searchbar" type="text" class="form-control" placeholder="Search for a place to get the weather" aria-label="location search" aria-describedby="basic-addon2">
             <div class="input-group-append">
                 <span class="input-group-text" id="search">Search!</span>
@@ -53,14 +51,14 @@
 
 
 
-        <div id="map"></div>
+        <div class="d-flex justify-content-center align-items-center mt-3" id="map"></div>
 
 
 
         <div  class="container-fluid px-1 px-md-4 py-5 mx-auto" id="cards">
-            <h3>Five Day Forecast</h3>
-            <div id="row" class="row row-cols-1 row-cols-md-5 g-5">
-                <div class="col">
+            <h3>Weather Forecast</h3>
+            <div id="row" class="row row-cols-1 row-cols-md-5 flex-wrap g-5">
+                <div class="col col-sm  mb-3">
                     <div class="card">
 
                         <div id="cardOne" class="card-body">
@@ -69,27 +67,26 @@
 
                     </div>
                 </div>
-                <div class="col">
+                <div class="col col-sm mb-3">
                     <div class="card">
 
                         <div id="cardTwo" class="card-body">
 
                         </div>
 
-
                     </div>
                 </div>
-                <div class="col">
-                    <div id="cardThree" class="card">
+                <div class="col col-sm mb-3 d-none d-lg-block">
+                    <div  class="card">
 
-                        <div class="card-body">
+                        <div id="cardThree" class="card-body">
 
                         </div>
 
-
                     </div>
                 </div>
-                <div class="col d-none d-lg-block">
+
+                <div class="col col-sm mb-3 d-none d-lg-block">
                     <div class="card">
 
                         <div id="cardFour" class="card-body">
@@ -98,7 +95,7 @@
 
                     </div>
                 </div>
-                <div class="col d-none d-lg-block">
+                <div class="col col-sm mb-3  d-none d-lg-block ">
                     <div class="card">
 
                         <div id="cardFive" class="card-body">
@@ -108,13 +105,18 @@
                     </div>
                 </div>
             </div>
-            <div id="row2" class="row row-cols-1 row-cols-md-5 g-5">
-
-
+            <div id="row2" class="row row-cols-1 row-cols-md-5 flex-wrap g-5">
+                <div class="col col-sm mb-3 d-lg-none">
+                    <div class="card">
+                        <div id="cardThrees" class="card-body"></div>
+                    </div>
+                </div>
+                <div class="col col-sm mb-3 d-lg-none">
+                    <div class="card">
+                        <div id="cardFours" class="card-body"></div>
+                    </div>
+                </div>
             </div>
-
-
-
         </div>
 
     </main>

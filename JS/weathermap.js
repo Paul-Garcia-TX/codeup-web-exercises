@@ -21,13 +21,14 @@ function geocode(search, token) {
             return data.features[0].center;
         });
 }
+
 geocode("2090 Airport Rd, New Braunfels, TX", mapboxgl.accessToken).then(function(result) {
     map.setCenter(result);
     map.setZoom(15);
     fetchWeatherData(result[1], result[0]);
     var marker = new mapboxgl.Marker({
         draggable: true,
-        className: 'marker'
+        // element: document.createElement('div').innerHTML = '<img id="marker" src="../img/bbhill.png">',
     })
         .setLngLat(result)
         .addTo(map);
@@ -49,7 +50,7 @@ geocode("2090 Airport Rd, New Braunfels, TX", mapboxgl.accessToken).then(functio
             });
             var marker = new mapboxgl.Marker({
                 draggable: true,
-                className: 'marker'
+                // element: document.createElement('div').innerHTML = '<img id="marker" src="../img/bbhill.png">'
             })
                 .setLngLat(result)
                 .addTo(map);
@@ -162,7 +163,7 @@ function fetchWeatherData(lat, lon, locationName) {
 
 
         document.getElementById("cardThree").innerHTML = dayThree;
-
+        document.getElementById("cardThrees").innerHTML = dayThree;
         let dayFour ="";
 
         const dayFourDate = new Date(data.daily[4].dt * 1000).toLocaleDateString();
@@ -181,7 +182,7 @@ function fetchWeatherData(lat, lon, locationName) {
 
 
         document.getElementById("cardFour").innerHTML = dayFour;
-
+        document.getElementById("cardFours").innerHTML = dayFour;
         let dayFive ="";
 
 
