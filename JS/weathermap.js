@@ -26,9 +26,17 @@ geocode("2090 Airport Rd, New Braunfels, TX", mapboxgl.accessToken).then(functio
     map.setCenter(result);
     map.setZoom(15);
     fetchWeatherData(result[1], result[0]);
+    let el = document.createElement('div');
+    el.style.backgroundImage = 'url(https://www.pngall.com/wp-content/uploads/13/Space-Invaders-PNG-Images-HD.png)';
+    el.style.width = '50px';
+    el.style.height = '50px';
+    el.style.backgroundSize = 'contain';
+    el.style.backgroundRepeat = 'no-repeat';
+    el.style.backgroundPosition = 'center';
     var marker = new mapboxgl.Marker({
         draggable: true,
-        // element: document.createElement('div').innerHTML = '<img id="marker" src="../img/bbhill.png">',
+        element: el
+
     })
         .setLngLat(result)
         .addTo(map);
@@ -48,9 +56,16 @@ geocode("2090 Airport Rd, New Braunfels, TX", mapboxgl.accessToken).then(functio
                 zoom: 10,
                 speed: 1
             });
+            let el = document.createElement('div');
+            el.style.backgroundImage = 'url(https://www.pngall.com/wp-content/uploads/13/Space-Invaders-Alien-No-Background.png)';
+            el.style.width = '50px';
+            el.style.height = '50px';
+            el.style.backgroundSize = 'contain';
+            el.style.backgroundRepeat = 'no-repeat';
+            el.style.backgroundPosition = 'center';
             var marker = new mapboxgl.Marker({
                 draggable: true,
-                // element: document.createElement('div').innerHTML = '<img id="marker" src="../img/bbhill.png">'
+                element: el
             })
                 .setLngLat(result)
                 .addTo(map);
