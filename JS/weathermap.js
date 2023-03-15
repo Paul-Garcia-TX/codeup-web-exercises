@@ -26,10 +26,11 @@ geocode("2090 Airport Rd, New Braunfels, TX", mapboxgl.accessToken).then(functio
     map.setCenter(result);
     map.setZoom(15);
     fetchWeatherData(result[1], result[0]);
+
     let el = document.createElement('div');
     el.style.backgroundImage = 'url(https://www.pngall.com/wp-content/uploads/13/Space-Invaders-PNG-Images-HD.png)';
-    el.style.width = '50px';
-    el.style.height = '50px';
+    el.style.width = '80px';
+    el.style.height = '80px';
     el.style.backgroundSize = 'contain';
     el.style.backgroundRepeat = 'no-repeat';
     el.style.backgroundPosition = 'center';
@@ -103,7 +104,7 @@ function fetchWeatherData(lat, lon, locationName) {
         console.log(data);
         // current weather data
         let html = "";
-        // html += '<div class="row d-flex justify-content-center px-3">';
+
         const currentDate = new Date(data.current.dt * 1000).toLocaleDateString();
 
         html += '<h5>Todays Weather: '+ currentDate + '</h5>';
@@ -122,6 +123,7 @@ function fetchWeatherData(lat, lon, locationName) {
 
         let dayOne ="";
         const dayOneDate = new Date(data.daily[1].dt * 1000).toLocaleDateString();
+
 
         dayOne += '<p>Date: ' + dayOneDate + '</p>';
         dayOne += '<div>';
@@ -215,3 +217,24 @@ function fetchWeatherData(lat, lon, locationName) {
 
     });
 }
+let twenty77 = [];
+let playcode = [50, 48, 55, 55]; // Corresponds to "2077" on the keyboard
+let audio = document.getElementById("myAudio");
+
+$(document).keydown(function(event) {
+    twenty77.push(event.keyCode);
+    if (twenty77.toString().indexOf(playcode) >= 0) {
+        audio.play();
+    } else if (event.keyCode === 83) { // 83 corresponds to "S" on the keyboard
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+        twenty77 = [];
+    }
+});
+
+$(document).keyup(function(event) {
+    twenty77 = [];
+});

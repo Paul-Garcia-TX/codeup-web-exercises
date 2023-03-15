@@ -289,3 +289,10 @@ $steps: 30;
         transform: rotateX(0deg) skewX(0deg);
     }
 }
+footer {
+    display: flex;
+
+    color: white;
+
+    margin-top: 1000px;
+}
