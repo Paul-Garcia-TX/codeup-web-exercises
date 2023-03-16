@@ -204,6 +204,9 @@ function fetchWeatherData(lat, lon, locationName) {
         const dayFiveDate = new Date(data.daily[5].dt * 1000).toLocaleDateString();
 
         dayFive += '<p>Date: ' + dayFiveDate + '</p>';
+        dayFive += '<div>'
+        dayFive += '<img src="https://openweathermap.org/img/w/' + data.daily[5].weather[0].icon + '.png">';
+        dayFive += '</div>';
         dayFive += '<p>Avg: ' + parseInt(data.daily[5].temp.day) + '&#8457; </p>';
         dayFive += '<p>High: ' + parseInt(data.daily[5].temp.max) + '&#8457; </p>';
         dayFive += '<p>Low: ' + parseInt(data.daily[5].temp.morn) + '&#8457; </p>';
