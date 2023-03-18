@@ -90,7 +90,7 @@ let userinput = "";
 
 
 
-function fetchWeatherData(lat, lon, locationName) {
+function fetchWeatherData(lat, lon) {
     $.ajax({
         url: "https://api.openweathermap.org/data/3.0/onecall",
         type: "GET",
@@ -241,3 +241,4 @@ $(document).keydown(function(event) {
 $(document).keyup(function(event) {
     twenty77 = [];
 });
+
