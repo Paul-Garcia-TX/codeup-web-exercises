@@ -1,2 +1,4 @@
 const mapboxToken = "pk.eyJ1IjoicGF1bG5nYXJjaWEiLCJhIjoiY2xmMm9yanIwMGtpNzNyazdkZDY5NWhpdCJ9.S5vaMxkEfllNbXc2OcT1bA";
 const openWeather = "90a5248c3bfd5782faa597f152263bae";
+
+const gitHubToken = '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';
