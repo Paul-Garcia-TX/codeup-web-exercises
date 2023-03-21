@@ -1,28 +1,32 @@
-//
-// const octokit = new Octokit({
-//     auth: gitHubToken
-// })
-
-
 
 
 async function getUserData() {
-    const response = await fetch('https://api.github.com/users/Paul-Garcia-TX');
+    const response = await fetch('https://api.github.com/users/Paul-Garcia-TX', {
+        headers: {
+            'Authorization': `Bearer ${gitHub}`
+        }
+    });
     const userData = await response.json();
-    console.log(userData);
+
     console.log("Your username is:", userData.login);
+    return userData;
 }
 
-// async function getActivity() {
-//     const response = await octokit.request('GET /users/{username}/events/public', {
-//         username: 'Paul-Garcia-TX',
-//         headers: {
-//             'X-Github-Api-Version': '2022-11-28'
-//         }
-//     });
-//     console.log(response.data);
-// }
-// fetch ('https://api.github.com/users/Paul-Garcia-TX/events/public')
+getUserData()
+    .then(data => {
+        return fetch(`https://api.github.com/repos/${data.login}/codeup-web-exercises/commits`, {
+            headers: {
+                'Authorization': `Bearer ${gitHub}`
+            }
+        });
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        const lastCommit = data[0].commit.author.date;
+        console.log('Last commit pushed at: ' + lastCommit);
+    })
+    .catch(error => console.error(error));
 
 
 
