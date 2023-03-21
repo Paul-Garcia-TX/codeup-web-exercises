@@ -31,20 +31,13 @@ getUserData()
 
 
 getUserData();
-// getActivity();
 
-
-//
-// const myPromise = new Promise((resolve,reject)=>{
-//     let randomNum = Math.random();
-//     if (randomNum > 0.5){
-//         console.log("Random num: " , randomNum);
-//         resolve();
-//     }
-//     else {
-//         console.log("Random num: ", randomNum);
-//         reject();
-//     }
-// });
-// myPromise.then(() => console.log('whoo! resolved!'));
-// myPromise.catch(()=> console.log('rejected'));
+function wait(ms){
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve();
+        }, ms);
+    });
+}
+wait(1000).then(() => console.log('You will see this after 1 second'));
+wait(3000).then(() => console.log('You will see this after 3 seconds'));
